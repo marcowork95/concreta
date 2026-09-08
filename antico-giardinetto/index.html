@@ -35,8 +35,16 @@
   .cont{max-width:1120px;margin:0 auto;padding:0 24px}
   .occhio{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ottone);margin:0 0 18px}
 
-  .prev{background:var(--ottone);color:#241A08;font-family:var(--et);font-size:14px;letter-spacing:.03em;line-height:1.45;padding:8px 18px;text-align:center;position:relative;z-index:60;text-wrap:pretty}
+  .prev{background:var(--ottone);color:#241A08;font-family:var(--et);font-size:14px;letter-spacing:.03em;line-height:1.45;padding:9px 18px;text-align:center;position:relative;z-index:60;text-wrap:pretty}
   .prev b{font-weight:700}.prev a{color:#241A08}
+  .prev .conta{display:inline-block;background:#241A08;color:var(--ottone);font-weight:700;
+    letter-spacing:.08em;padding:2px 9px;border-radius:99px;margin-left:4px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .scaduta{position:fixed;inset:0;z-index:200;background:var(--notte);display:flex;align-items:center;justify-content:center;padding:32px;text-align:center}
+  .scaduta .b{max-width:30em}
+  .scaduta h2{font-family:var(--display);font-size:clamp(30px,7vw,48px);margin:0 0 18px;color:var(--avorio)}
+  .scaduta p{color:var(--avorio2);font-size:18px}
+  .wa{background:#1F8F4E!important;border-color:#1F8F4E!important;color:#fff!important}
+  .azione a.wa{background:#1F8F4E;color:#fff}
 
   .top{position:sticky;top:0;z-index:50;background:rgba(11,19,16,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
   .top .cont{display:flex;align-items:center;justify-content:space-between;gap:14px;height:60px}
@@ -236,6 +244,7 @@
     .azione{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--filo);border-top:1px solid var(--filo2)}
     .azione a{background:var(--notte2);color:var(--avorio);font-family:var(--et);font-size:15.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:15px 8px;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
     .azione a.p{background:var(--ottone);color:#20180A}
+    .azione:has(a.wa){grid-template-columns:1.3fr 1.1fr 1fr}
     .azione svg{width:16px;height:16px;flex:none}
   }
   @media (max-width:380px){
@@ -250,8 +259,10 @@
 </head>
 <body>
 <div class="prev">
-  <b>Anteprima</b> — <span data-it="proposta di sito nuovo per l'Osteria Antico Giardinetto. Non è il sito ufficiale:" data-en="proposed new website for Osteria Antico Giardinetto. This is not the official site:">proposta di sito nuovo per l'Osteria Antico Giardinetto. Non è il sito ufficiale:</span>
-  <a href="http://www.anticogiardinetto.it/">anticogiardinetto.it</a>
+  <b>Anteprima</b> — <span data-it="proposta di sito per l'Osteria Antico Giardinetto. Non è il sito ufficiale:" data-en="proposed website for Osteria Antico Giardinetto. This is not the official site:">proposta di sito per l'Osteria Antico Giardinetto. Non è il sito ufficiale:</span>
+  <a href="http://www.anticogiardinetto.it/">anticogiardinetto.it</a><br>
+  <span data-it="Questa pagina si cancella da sola fra" data-en="This page deletes itself in">Questa pagina si cancella da sola fra</span>
+  <span class="conta" id="conta">—</span>
 </div>
 
 <div class="top">
@@ -483,6 +494,7 @@
       <span class="ora" data-it="Tutte le sere dalle 18:30 &middot; chiuso il lunedì" data-en="Every evening from 6:30 pm &middot; closed Mondays">Tutte le sere dalle 18:30 &middot; chiuso il lunedì</span>
     </a>
 
+
     <div class="separa"><span data-it="oppure scriveteci" data-en="or write to us">oppure scriveteci</span></div>
 
     <form class="modulo" id="modulo" novalidate>
@@ -538,7 +550,15 @@
 
 <div class="avviso" id="avviso" role="status" aria-live="polite"></div>
 
+<div class="scaduta" id="scaduta" hidden>
+  <div class="b">
+    <h2 data-it="Questa anteprima è scaduta" data-en="This preview has expired">Questa anteprima è scaduta</h2>
+    <p data-it="Il sito che avevamo preparato per l'Osteria Antico Giardinetto non è più disponibile a questo indirizzo. Se vi interessa ancora, scriveteci e ve lo rimettiamo online." data-en="The site we had prepared for Osteria Antico Giardinetto is no longer available at this address. If you are still interested, write to us and we will put it back online.">Il sito che avevamo preparato per l'Osteria Antico Giardinetto non è più disponibile a questo indirizzo. Se vi interessa ancora, scriveteci e ve lo rimettiamo online.</p>
+  </div>
+</div>
+
 <nav class="azione" aria-label="Azioni">
+
   <a class="p" href="tel:+39041722882"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A13 13 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5z"/></svg><span data-it="Chiama" data-en="Call">Chiama</span></a>
   <a href="#prenota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg><span data-it="Prenota" data-en="Book">Prenota</span></a>
 </nav>
@@ -558,6 +578,7 @@
     });
     document.documentElement.setAttribute("lang", lang);
     stato();
+    if (typeof orologio === "function") orologio();
   }
   document.querySelectorAll(".lingua button").forEach(function(b){
     b.addEventListener("click", function(){
@@ -741,6 +762,26 @@
             "info@anticogiardinetto.it");
     }
   });
+
+  /* --- scadenza dell'anteprima: vera, non scritta e basta --- */
+  var SCADENZA = "2026-09-10T14:42:36+00:00";        // istante ISO messo al momento della costruzione
+  function orologio(){
+    var box = document.getElementById("conta");
+    if (!box || !SCADENZA || SCADENZA.indexOf("{{") === 0) return;
+    var restano = new Date(SCADENZA).getTime() - Date.now();
+    if (restano <= 0) {
+      var sc = document.getElementById("scaduta");
+      if (sc) { sc.hidden = false; document.body.style.overflow = "hidden"; }
+      box.textContent = lang === "en" ? "expired" : "scaduta";
+      return;
+    }
+    var ore = Math.floor(restano / 3600000);
+    var min = Math.floor((restano % 3600000) / 60000);
+    box.textContent = ore >= 1
+      ? (lang === "en" ? ore + "h " + min + "m" : ore + " ore " + min + " min")
+      : min + (lang === "en" ? " min" : " minuti");
+  }
+  orologio(); setInterval(orologio, 30000);
 
   applica();
 })();
