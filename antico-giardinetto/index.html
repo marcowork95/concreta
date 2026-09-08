@@ -75,6 +75,18 @@
   .fascia .v{font-size:16.5px;line-height:1.5;display:block}
   .fascia .v a{color:var(--avorio);text-decoration:none;border-bottom:1px solid var(--ottone2)}
 
+  .voti{background:var(--pietra);border-bottom:1px solid var(--filo)}
+  .voti .cont{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,4vw,38px);align-items:center;padding-top:26px;padding-bottom:26px}
+  .voto{text-align:center;flex:none}
+  .voto .n{font-family:var(--display);font-weight:500;font-size:clamp(44px,8vw,62px);line-height:1;color:var(--ottone);display:block}
+  .voto .su{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio);display:block;margin-top:6px}
+  .stelle{display:flex;gap:3px;justify-content:center;margin-top:10px}
+  .stelle svg{width:19px;height:19px;flex:none}
+  .voti .dice p{margin:0 0 8px;font-size:17.5px;color:var(--avorio);text-wrap:pretty}
+  .voti .dice p b{color:var(--ottone);font-weight:400;font-family:var(--display);font-size:21px}
+  .voti .dice .fonte2{font-family:var(--et);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grigio)}
+  .voti .dice .fonte2 a{color:var(--grigio)}
+
   section{padding:clamp(52px,7.5vw,92px) 0}
   section+section{border-top:1px solid var(--filo)}
   h2{font-size:clamp(30px,4.6vw,50px);line-height:1.06;margin:0 0 22px}
@@ -210,6 +222,8 @@
     .piede{grid-template-columns:minmax(0,1fr);text-align:left}
     .piede>div:last-child{text-align:left!important}
     .fatto{grid-template-columns:minmax(0,1fr);gap:2px;padding:12px 0}
+    .voti .cont{grid-template-columns:minmax(0,1fr);gap:16px;text-align:center}
+    .voti .dice p{font-size:16.5px}
     .galleria{grid-template-columns:1fr 1fr;gap:8px}
     .scatto img{aspect-ratio:1/1}
     .scatto:last-child{grid-column:1/-1}
@@ -278,6 +292,22 @@
     <div><span class="k" data-it="Orari" data-en="Hours">Orari</span><span class="v" data-it="Tutte le sere 18:30 – 22:00<br>Chiuso il lunedì e a pranzo" data-en="Every evening 6:30 – 10:00 pm<br>Closed Mondays and at lunch">Tutte le sere 18:30 – 22:00<br>Chiuso il lunedì e a pranzo</span></div>
     <div><span class="k" data-it="Prenotazioni" data-en="Reservations">Prenotazioni</span><span class="v"><a href="tel:+39041722882">041 722882</a><br><a href="mailto:info@anticogiardinetto.it">info@anticogiardinetto.it</a></span></div>
     <div><span class="k" data-it="Dove" data-en="Where">Dove</span><span class="v">Calle dei Morti 2253<br>Santa Croce, 30135 Venezia</span></div>
+  </div>
+</div>
+
+
+<div class="voti">
+  <div class="cont">
+    <div class="voto">
+      <span class="n">4,5</span>
+      <div class="stelle" role="img" aria-label="4,5 stelle su 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z" fill="#C9A05C" stroke="#C9A05C" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z" fill="#C9A05C" stroke="#C9A05C" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z" fill="#C9A05C" stroke="#C9A05C" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z" fill="#C9A05C" stroke="#C9A05C" stroke-width="1.2" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="mez"><stop offset="50%" stop-color="#C9A05C"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05-5.8 3.05 1.1-6.5-4.7-4.6 6.5-.95z" fill="url(#mez)" stroke="#C9A05C" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+      <span class="su" data-it="su Tripadvisor" data-en="on Tripadvisor">su Tripadvisor</span>
+    </div>
+    <div class="dice">
+      <p data-it="Numero <b>72</b> su <b>1.463</b> ristoranti di Venezia." data-en="Ranked <b>#72</b> of <b>1,463</b> restaurants in Venice.">Numero <b>72</b> su <b>1.463</b> ristoranti di Venezia.</p>
+      <p data-it="<b>1.564</b> recensioni di chi c'è stato davvero." data-en="<b>1,564</b> reviews from people who actually came."><b>1.564</b> recensioni di chi c'è stato davvero.</p>
+      <p class="fonte2"><a href="https://www.tripadvisor.it/Restaurant_Review-g187870-d1392876-Reviews-Osteria_Antico_Giardinetto-Venice_Veneto.html" target="_blank" rel="noopener" data-it="Leggile su Tripadvisor" data-en="Read them on Tripadvisor">Leggile su Tripadvisor</a></p>
+    </div>
   </div>
 </div>
 
