@@ -620,6 +620,7 @@
     document.getElementById("testo-mail").textContent = corpo;
     box.hidden = false;
     document.getElementById("apri-mail").onclick = function(){
+      if (!dentroCornice) { window.location.href = indirizzo; return; }
       if (!fuori(indirizzo)) {
         copia(corpo, lang === "en" ? "Message copied" : "Messaggio copiato", "info@anticogiardinetto.it");
       }
@@ -642,7 +643,7 @@
       }
     };
     box.scrollIntoView({behavior: "smooth", block: "nearest"});
-    fuori(indirizzo);
+    if (dentroCornice) { fuori(indirizzo); } else { window.location.href = indirizzo; }
   });
 
   /* --- telefono e mail: sul computer non c'è niente che li raccolga,
@@ -675,6 +676,10 @@
   /* La pagina non naviga MAI da sola verso tel:/mailto:. Dentro una cornice quella
      navigazione non arriva al sistema e lascia lo schermo bianco: successo su computer
      e su telefono. Si prova ad aprirlo fuori, e in ogni caso si copia e si avvisa. */
+  /* Dentro la cornice dell'anteprima i link tel:/mailto: non arrivano al sistema e
+     lasciano lo schermo bianco. Su una pagina vera invece funzionano: lì non si tocca niente. */
+  var dentroCornice = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+
   function fuori(href){
     /* SOLO una finestra nuova. Mai window.top e mai window.location:
        dentro la cornice quella navigazione lascia lo schermo bianco. */
@@ -686,6 +691,7 @@
   document.addEventListener("click", function(ev){
     var a = ev.target.closest && ev.target.closest('a[href^="tel:"], a[href^="mailto:"]');
     if (!a) return;
+    if (!dentroCornice) return;      // sito vero: parte la chiamata, non tocchiamo niente
     ev.preventDefault();
     var href = a.getAttribute("href");
     var telefono = href.indexOf("tel:") === 0;
