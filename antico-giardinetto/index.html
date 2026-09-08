@@ -21,6 +21,7 @@
     --et:"Barlow Condensed","Helvetica Neue",Arial,sans-serif;
   }
   *{box-sizing:border-box}
+  [hidden]{display:none!important}   /* sul sito vero non c'è nessuno che lo faccia per noi */
   body{
     background:var(--notte);color:var(--avorio);font-family:var(--testo);font-weight:300;
     font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;
@@ -764,7 +765,7 @@
   });
 
   /* --- scadenza dell'anteprima: vera, non scritta e basta --- */
-  var SCADENZA = "2026-09-10T14:42:36+00:00";        // istante ISO messo al momento della costruzione
+  var SCADENZA = "2026-09-10T14:52:05+00:00";        // istante ISO messo al momento della costruzione
   function orologio(){
     var box = document.getElementById("conta");
     if (!box || !SCADENZA || SCADENZA.indexOf("{{") === 0) return;
