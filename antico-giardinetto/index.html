@@ -37,7 +37,7 @@
   .occhio{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ottone);margin:0 0 18px}
 
   .prev{background:var(--ottone);color:#241A08;font-family:var(--et);font-size:14px;letter-spacing:.03em;line-height:1.45;padding:9px 18px;text-align:center;position:relative;z-index:60;text-wrap:pretty}
-  .prev b{font-weight:700}.prev a{color:#241A08}
+  .prev b{font-weight:700}.prev a{color:#241A08;font-weight:600}
   .prev .conta{display:inline-block;background:#241A08;color:var(--ottone);font-weight:700;
     letter-spacing:.08em;padding:2px 9px;border-radius:99px;margin-left:4px;white-space:nowrap;font-variant-numeric:tabular-nums}
   .scaduta{position:fixed;inset:0;z-index:200;background:var(--notte);display:flex;align-items:center;justify-content:center;padding:32px;text-align:center}
@@ -275,6 +275,28 @@
   .dopo{margin:18px 0 0;font-size:15.5px;color:#4A2F14;text-wrap:pretty}
   .dopo a{color:#1E1206}
   @media (max-width:640px){ .incluso{grid-template-columns:minmax(0,1fr)} }
+
+  .bmini{display:inline-flex;align-items:center;gap:8px;font-family:var(--et);font-size:15px;font-weight:700;
+    letter-spacing:.09em;text-transform:uppercase;text-decoration:none;padding:9px 16px;border-radius:99px;
+    background:var(--ottone);white-space:nowrap;flex:none;border:1px solid var(--ottone)}
+  .bmini,.bmini *{color:#1E1206!important}
+  .bmini svg{width:15px;height:15px;flex:none}
+  .strisciona{display:none}
+  @media (max-width:640px){
+    .bmini{display:none}
+    .strisciona{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      position:fixed;left:0;right:0;bottom:52px;z-index:56;
+      background:var(--notte);color:var(--avorio);text-decoration:none;
+      font-family:var(--et);font-size:14px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+      padding:11px 12px;border-top:1px solid var(--ottone);border-bottom:1px solid rgba(242,239,234,.46);white-space:nowrap;overflow:hidden;
+      box-shadow:0 -10px 24px -14px rgba(0,0,0,.7);
+    }
+    .strisciona .euro{background:var(--ottone);color:#1E1206;border-radius:99px;padding:4px 12px;font-weight:700;flex:none}
+    .strisciona .tempo{font-variant-numeric:tabular-nums;color:var(--grigio);font-size:12.5px;font-weight:600;flex:none;letter-spacing:0}
+    .strisciona .euro{font-size:14px;padding:4px 11px;letter-spacing:.02em}
+    body{padding-bottom:118px}
+  }
 </style>
 </head>
 <body>
@@ -296,6 +318,10 @@
         <button type="button" data-lang="it" aria-pressed="true">IT</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
+      <a class="bmini" href="https://buy.stripe.com/4gMbJ0byB6kV3xual72wU0P" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg>
+        <span data-it="Prendilo &middot; 390 &euro;" data-en="Get it &middot; &euro;390">Prendilo &middot; 390 &euro;</span>
+      </a>
     </nav>
   </div>
 </div>
@@ -609,6 +635,12 @@
   </div>
 </div>
 
+<a class="strisciona" href="https://buy.stripe.com/4gMbJ0byB6kV3xual72wU0P" target="_blank" rel="noopener">
+  <span data-it="Prendi il sito" data-en="Get the site">Prendi il sito</span>
+  <span class="euro">390 &euro;</span>
+  <span class="tempo" id="conta3"></span>
+</a>
+
 <nav class="azione" aria-label="Azioni">
 
   <a class="p" href="tel:+39041722882"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A13 13 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5z"/></svg><span data-it="Chiama" data-en="Call">Chiama</span></a>
@@ -816,22 +848,26 @@
   });
 
   /* --- scadenza dell'anteprima: vera, non scritta e basta --- */
-  var SCADENZA = "2026-09-11T10:46:18+00:00";        // istante ISO messo al momento della costruzione
+  var SCADENZA = "2026-09-11T11:05:25+00:00";        // istante ISO messo al momento della costruzione
   function orologio(){
     var box = document.getElementById("conta");
+    var box3 = document.getElementById("conta3");
     if (!box || !SCADENZA || SCADENZA.indexOf("{{") === 0) return;
     var restano = new Date(SCADENZA).getTime() - Date.now();
     if (restano <= 0) {
       var sc = document.getElementById("scaduta");
       if (sc) { sc.hidden = false; document.body.style.overflow = "hidden"; }
       box.textContent = lang === "en" ? "expired" : "scaduta";
+      if (box3) box3.textContent = "";
       return;
     }
     var ore = Math.floor(restano / 3600000);
     var min = Math.floor((restano % 3600000) / 60000);
+    var breve = ore >= 1 ? ore + "h " + min + "m" : min + "m";
     box.textContent = ore >= 1
       ? (lang === "en" ? ore + "h " + min + "m" : ore + " ore " + min + " min")
       : min + (lang === "en" ? " min" : " minuti");
+    if (box3) box3.textContent = "\u2212" + breve;
   }
   orologio(); setInterval(orologio, 30000);
 
