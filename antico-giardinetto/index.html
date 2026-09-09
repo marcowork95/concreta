@@ -686,8 +686,8 @@
   });
 
   var T = {
-    it:{aperto:"Aperto adesso · fino alle 22:00", apre:"Apre stasera alle 18:30", lunedi:"Oggi chiuso · lunedì", chiuso:"Chiuso adesso · riapre domani alle 18:30"},
-    en:{aperto:"Open now · until 10:00 pm", apre:"Opens tonight at 6:30 pm", lunedi:"Closed today · Monday", chiuso:"Closed now · reopens tomorrow at 6:30 pm"}
+    it:{aperto:"Aperto adesso · fino alle 22:00", apre:"Stasera dalle 18:30", lunedi:"Su prenotazione · chiamateci", chiuso:"Su prenotazione · chiamateci"},
+    en:{aperto:"Open now · until 10:00 pm", apre:"Tonight from 6:30 pm", lunedi:"By reservation · call us", chiuso:"By reservation · call us"}
   };
   function stato(){
     var box = document.getElementById("stato"), txt = document.getElementById("stato-testo");
@@ -706,7 +706,7 @@
     if (p.weekday === "Mon") { msg = t.lunedi; }
     else if (min >= 1110 && min < 1320) { cls = "aperto"; msg = t.aperto; }
     else if (min < 1110) { msg = t.apre; }
-    box.className = "stato " + cls;
+    box.className = "stato aperto";
     txt.textContent = msg;
   }
   stato(); setInterval(stato, 60000);
