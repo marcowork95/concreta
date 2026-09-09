@@ -33,15 +33,32 @@
   .cont{max-width:1120px;margin:0 auto;padding:0 24px}
   .occhio{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ottone);margin:0 0 18px}
 
-  .prev{background:var(--ottone);color:#26150E;font-family:var(--et);font-size:14px;letter-spacing:.03em;line-height:1.45;padding:9px 18px;text-align:center;position:relative;z-index:60;text-wrap:pretty}
+  .prev{background:var(--ottone);color:#26150E;font-family:var(--et);font-size:14px;letter-spacing:.03em;
+    line-height:1.4;padding:9px 16px;position:sticky;top:0;z-index:60;
+    display:flex;align-items:center;justify-content:center;gap:14px 20px;flex-wrap:wrap;text-align:center}
+  .prev .testo{max-width:62ch;text-wrap:pretty}
+  .prev .destra{display:flex;align-items:center;gap:12px;flex:none}
   .prev b{font-weight:700}.prev a{color:#26150E;font-weight:600}
-  .prev .conta{display:inline-block;background:#26150E;color:var(--ottone);font-weight:700;letter-spacing:.08em;padding:2px 9px;border-radius:99px;margin-left:4px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .prev .conta{display:inline-block;background:#26150E;color:var(--ottone);font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:99px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .prev .btn-compra{display:inline-flex;align-items:center;gap:9px;background:#26150E;color:var(--ottone);
+    text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.09em;text-transform:uppercase;
+    padding:10px 20px;border-radius:99px;white-space:nowrap;border:1px solid #26150E}
+  .prev .btn-compra,.prev .btn-compra *{color:#FFFFFF}
+  .prev{border-bottom:2px solid #26150E}
+  .prev .btn-compra svg{width:16px;height:16px;flex:none}
+  @media (max-width:760px){
+    .prev{gap:8px;padding:10px 14px;flex-direction:column}
+    .prev .testo{font-size:13px;line-height:1.35}
+    .prev .destra{flex-direction:column;gap:8px;width:100%;max-width:340px}
+    .prev .conta{font-size:12.5px;padding:3px 10px}
+    .prev .btn-compra{width:100%;justify-content:center;font-size:15px;padding:11px 14px}
+  }
   .scaduta{position:fixed;inset:0;z-index:200;background:var(--notte);display:flex;align-items:center;justify-content:center;padding:32px;text-align:center}
   .scaduta .b{max-width:30em}
   .scaduta h2{font-size:clamp(30px,7vw,48px);margin:0 0 18px}
   .scaduta p{color:var(--avorio2);font-size:18px}
 
-  .top{position:sticky;top:0;z-index:50;background:rgba(14,21,25,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
+  .top{position:relative;z-index:50;background:rgba(14,21,25,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
   .top .cont{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
   .marchio{font-family:var(--display);font-size:20px;color:var(--avorio);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
   .nav{display:flex;align-items:center;gap:20px;flex:none}
@@ -223,14 +240,8 @@
   .dopo a{color:#1E1206}
   @media (max-width:640px){ .incluso{grid-template-columns:minmax(0,1fr)} }
 
-  .bmini{display:inline-flex;align-items:center;gap:8px;font-family:var(--et);font-size:15px;font-weight:700;
-    letter-spacing:.09em;text-transform:uppercase;text-decoration:none;padding:9px 16px;border-radius:99px;
-    background:var(--ottone);white-space:nowrap;flex:none;border:1px solid var(--ottone)}
-  .bmini,.bmini *{color:#1E1206!important}
-  .bmini svg{width:15px;height:15px;flex:none}
   .strisciona{display:none}
   @media (max-width:640px){
-    .bmini{display:none}
     .strisciona{
       display:flex;align-items:center;justify-content:center;gap:8px;
       position:fixed;left:0;right:0;bottom:52px;z-index:56;
@@ -248,10 +259,16 @@
 </head>
 <body>
 <div class="prev">
-  <b>Anteprima</b> — <span data-it="proposta di sito per il Ristorante Il Piraña. Non è il sito ufficiale:" data-en="proposed website for Ristorante Il Piraña. This is not the official site:">proposta di sito per il Ristorante Il Piraña. Non è il sito ufficiale:</span>
-  <a href="http://www.ristorantepirana.it/">ristorantepirana.it</a><br>
-  <span data-it="Questa pagina si cancella da sola fra" data-en="This page deletes itself in">Questa pagina si cancella da sola fra</span>
-  <span class="conta" id="conta">—</span>
+  <span class="testo">
+    <b>Anteprima</b> — <span data-it="proposta di sito. Non è il sito ufficiale:" data-en="proposed site. Not the official one:">proposta di sito. Non è il sito ufficiale:</span>
+    <a href="http://www.ristorantepirana.it/">ristorantepirana.it</a>
+  </span>
+  <span class="destra">
+    <span class="conta" id="conta">—</span>
+    <a class="btn-compra" href="https://buy.stripe.com/8x24gy4695gR9VSal72wU0Q" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg><span data-it="Compra questo sito &middot; 390 &euro;" data-en="Buy this site &middot; &euro;390">Compra questo sito &middot; 390 &euro;</span>
+    </a>
+  </span>
 </div>
 
 <div class="top">
@@ -265,10 +282,6 @@
         <button type="button" data-lang="it" aria-pressed="true">IT</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="bmini" href="https://buy.stripe.com/8x24gy4695gR9VSal72wU0Q" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg>
-        <span data-it="Prendilo &middot; 390 &euro;" data-en="Get it &middot; &euro;390">Prendilo &middot; 390 &euro;</span>
-      </a>
     </nav>
   </div>
 </div>
@@ -518,7 +531,7 @@
 </div>
 
 <a class="strisciona" href="https://buy.stripe.com/8x24gy4695gR9VSal72wU0Q" target="_blank" rel="noopener">
-  <span data-it="Prendi il sito" data-en="Get the site">Prendi il sito</span>
+  <span data-it="Compra questo sito" data-en="Buy this site">Compra questo sito</span>
   <span class="euro">390 &euro;</span>
   <span class="tempo" id="conta3"></span>
 </a>
@@ -685,7 +698,7 @@
     if (dentroCornice) fuori(indirizzo); else window.location.href = indirizzo;
   });
 
-  var SCADENZA = "2026-09-11T11:05:25+00:00";
+  var SCADENZA = "2026-09-11T16:47:27+00:00";
   function orologio(){
     var box = document.getElementById("conta");
     var box3 = document.getElementById("conta3");
@@ -700,9 +713,9 @@
     }
     var ore = Math.floor(restano / 3600000), min = Math.floor((restano % 3600000) / 60000);
     var breve = ore >= 1 ? ore + "h " + min + "m" : min + "m";
-    box.textContent = ore >= 1
-      ? (lang === "en" ? ore + "h " + min + "m" : ore + " ore " + min + " min")
-      : min + (lang === "en" ? " min" : " minuti");
+    box.textContent = (lang === "en" ? "gone in " : "sparisce fra ") +
+      (ore >= 1 ? (lang === "en" ? ore + "h " + min + "m" : ore + " ore " + min + " min")
+                : min + (lang === "en" ? " min" : " minuti"));
     if (box3) box3.textContent = "\u2212" + breve;
   }
   orologio(); setInterval(orologio, 30000);
