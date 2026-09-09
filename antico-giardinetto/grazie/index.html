@@ -2,78 +2,98 @@
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Il vostro sito · Osteria Antico Giardinetto</title>
+<title>Come mettere online il vostro sito · Osteria Antico Giardinetto</title>
 <style>
- @page{size:A4;margin:18mm 16mm}
+ @page{size:A4;margin:16mm 15mm}
  *{box-sizing:border-box}
  body{margin:0;background:#0B1310;color:#F3EEE3;font:17px/1.68 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
- .c{max-width:760px;margin:0 auto;padding:0 24px 60px}
- h1{font-size:clamp(30px,6vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}
- h2{font-size:24px;margin:38px 0 14px;letter-spacing:-.01em}
- p{margin:0 0 16px}
- .occhio{font:600 13px/1 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A05C;margin:52px 0 16px}
- .scheda{background:#16241E;border:1px solid #243530;border-radius:3px;padding:18px 20px;margin:0 0 26px}
- .r{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:12px;padding:9px 0;border-top:1px solid #243530}
+ .c{max-width:740px;margin:0 auto;padding:0 24px 60px}
+ h1{font-size:clamp(29px,5.6vw,44px);line-height:1.06;margin:0 0 12px;letter-spacing:-.02em}
+ h2{font-size:23px;margin:40px 0 12px;letter-spacing:-.01em;page-break-after:avoid}
+ p{margin:0 0 15px}
+ code{font:15px ui-monospace,Menlo,monospace;background:#1B2C25;padding:2px 6px;border-radius:3px;color:#F3EEE3}
+ .occhio{font:600 13px/1 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A05C;margin:48px 0 14px}
+ .sotto{font:600 15px/1.6 Arial,sans-serif;color:#C9C3B5;margin:0 0 26px}
+ .scheda{background:#16241E;border:1px solid #243530;border-radius:3px;padding:16px 18px;margin:0 0 24px}
+ .r{display:grid;grid-template-columns:minmax(115px,175px) 1fr;gap:12px;padding:8px 0;border-top:1px solid #243530}
  .r:first-child{border-top:0;padding-top:0}
- .k{font:600 12.5px/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#C9A05C}
+ .k{font:600 12px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#C9A05C}
  .v{color:#C9C3B5} .v b{color:#F3EEE3;font-weight:400} .q{color:#8B948E;font-size:14px}
- ol{padding-left:22px;margin:0 0 18px} li{margin-bottom:11px;color:#C9C3B5} li b{color:#F3EEE3;font-weight:400}
- .scarica{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 Arial,sans-serif;letter-spacing:.09em;
-   text-transform:uppercase;text-decoration:none;background:#C9A05C;color:#20180A;padding:14px 24px;border-radius:3px;margin:4px 0 8px}
- @media print{ .scarica{display:none} }
- .avviso{border-left:3px solid #D2704A;background:#2A1A12;padding:18px 20px;margin:24px 0;border-radius:0 3px 3px 0}
- .avviso b{color:#F3EEE3}
- .aiuto{border-left:3px solid #C9A05C;background:#1B2C25;padding:18px 20px;margin:24px 0;border-radius:0 3px 3px 0}
+ ol.passi{counter-reset:p;list-style:none;margin:0;padding:0}
+ ol.passi li{counter-increment:p;display:grid;grid-template-columns:38px 1fr;gap:14px;
+   padding:16px 0;border-top:1px solid #243530;page-break-inside:avoid}
+ ol.passi li::before{content:counter(p);font:700 20px/1.2 Arial,sans-serif;color:#C9A05C}
+ ol.passi .tit{grid-column:2;font:400 19px/1.35 Georgia,serif;color:#F3EEE3;display:block;margin-bottom:5px}
+ ol.passi .d{grid-column:2;color:#C9C3B5;display:block}
+ ol.passi .d b{color:#F3EEE3;font-weight:400}
+ .prima{background:#1B2C25;border:1px solid #2C4238;border-radius:3px;padding:18px 20px;margin:0 0 8px}
+ .prima ul{margin:8px 0 0;padding-left:20px} .prima li{margin-bottom:7px;color:#C9C3B5}
+ .avviso{border-left:3px solid #D2704A;background:#2A1A12;padding:17px 19px;margin:22px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
+ .aiuto{border-left:3px solid #C9A05C;background:#1B2C25;padding:17px 19px;margin:22px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
+ .avviso b,.aiuto b{color:#F3EEE3}
+ .piccolo{font-size:15px;color:#8B948E}
  a{color:#C9A05C}
- footer{margin-top:44px;padding-top:18px;border-top:1px solid #243530;font:12.5px/1.8 Arial,sans-serif;color:#8B948E}
- @media print{ body{background:#fff;color:#111} .scheda{background:#f6f5f2;border-color:#ddd}
-   .k{color:#8a6a2a} .v{color:#333} .v b,li b,.avviso b{color:#000} li{color:#333}
+ .scarica{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 Arial,sans-serif;letter-spacing:.09em;
+   text-transform:uppercase;text-decoration:none;background:#C9A05C;color:#20180A;padding:14px 24px;border-radius:3px;margin:2px 0 6px}
+ footer{margin-top:42px;padding-top:16px;border-top:1px solid #243530;font:12.5px/1.8 Arial,sans-serif;color:#8B948E}
+ @media print{ body{background:#fff;color:#111} .scarica{display:none}
+   .scheda,.prima{background:#f6f5f2;border-color:#ddd} code{background:#eee;color:#111}
+   .k,.occhio,ol.passi li::before{color:#8a6a2a} .v,.d,.prima li,.piccolo{color:#333}
+   .v b,.d b,.avviso b,.aiuto b,ol.passi .tit{color:#000}
    .avviso{background:#fdf3ef;border-color:#c0563a} .aiuto{background:#f8f4ea;border-color:#a8802f}
-   a{color:#8a6a2a} footer{color:#666;border-color:#ddd} h1,h2{color:#111} .occhio{color:#8a6a2a} }
+   a{color:#8a6a2a} footer{color:#666;border-color:#ddd} h1,h2{color:#111} ol.passi li{border-color:#e2e2e2} }
 </style></head><body><div class="c">
 
 <p class="occhio">Grazie</p>
-<h1>Il sito è vostro</h1>
-<p>Queste sono le istruzioni per metterlo online sul vostro indirizzo. Sono scritte apposta per la
-vostra situazione: abbiamo già guardato dove stanno il vostro sito e la vostra posta.</p>
+<h1>Come mettere online il vostro sito</h1>
+<p class="sotto">Ci vogliono circa dieci minuti · non serve saperne di computer · si può tornare indietro in qualsiasi momento</p>
 
 <a class="scarica" href="istruzioni.pdf" download>Scarica queste istruzioni in PDF</a>
 
-<h2>Come state messi adesso</h2>
-<div class="scheda"><div class="r"><span class="k">Il vostro indirizzo</span><span class="v"><b>anticogiardinetto.it</b></span></div><div class="r"><span class="k">Dove sta il sito oggi</span><span class="v">Aruba <span class=q>(webs35-189.aruba.it)</span></span></div><div class="r"><span class="k">Chi gestisce il DNS</span><span class="v">Aruba</span></div><div class="r"><span class="k">La vostra posta</span><span class="v">Aruba — <b>non si tocca</b></span></div></div>
-
-<div class="avviso">
-  <p><b>La cosa più importante: non toccate niente della posta.</b> Le vostre email funzionano
-  grazie a certi codici del dominio che si chiamano <b>record MX</b>. Seguendo queste istruzioni non
-  li sfiorate nemmeno, perché <b>il dominio non va modificato per niente</b>: si sostituisce solo il
-  file del sito. Se qualcuno vi propone di «spostare i server dei nomi», fermatevi e chiamateci.</p>
+<h2>Cosa vi serve prima di cominciare</h2>
+<div class="prima">
+  <ul>
+    <li><b>Il file che vi abbiamo mandato</b>, si chiama <code>index.html</code>. Salvatelo sul computer e ricordatevi dov'è.</li>
+    <li><b>Email e password di Aruba</b>, dove è ospitato il vostro sito. Se non le trovate, sotto c'è scritto come recuperarle.</li>
+    <li>Un computer. Dal telefono si può fare, ma è scomodo.</li>
+  </ul>
 </div>
 
-<h2>Cosa fare, passo per passo</h2>
-<p>Vi abbiamo mandato <b>un file solo</b>, si chiama <code>index.html</code>. Dentro c'è tutto:
-testi, fotografie e caratteri. Non serve caricare altro.</p>
-<ol>
-      <li>Entrate su admin.aruba.it con le credenziali del vostro hosting</li>
-      <li>Cliccate su <b>Gestione Hosting</b>, poi <b>Gestione File</b> (oppure collegatevi in FTP)</li>
-      <li>Aprite la cartella <b>www</b> (a volte si chiama <b>htdocs</b> o <b>public_html</b>)</li>
-      <li>Caricate il file <b>index.html</b> che vi abbiamo mandato</li>
-      <li>Se dentro c'è già un <b>index.html</b> o un <b>index.htm</b>, rinominatelo prima in <b>index-vecchio.html</b>: così potete tornare indietro in qualsiasi momento</li>
-</ol>
-<p>Appena caricato, aprite il vostro indirizzo dal telefono: dovreste vedere il sito nuovo.
-Se vedete ancora quello vecchio, aspettate qualche minuto e ricaricate la pagina.</p>
-<p>Il pannello del vostro fornitore è qui: <a href="https://admin.aruba.it">https://admin.aruba.it</a></p>
+<h2>La vostra situazione</h2>
+<p>L'abbiamo già guardata noi, così non dovete cercare niente:</p>
+<div class="scheda"><div class="r"><span class="k">Il vostro sito</span><span class="v"><b>anticogiardinetto.it</b></span></div><div class="r"><span class="k">Chi vi ospita il sito</span><span class="v"><b>Aruba</b> <span class="q">(webs35-189.aruba.it)</span></span></div><div class="r"><span class="k">Chi gestisce il dominio</span><span class="v">Aruba</span></div><div class="r"><span class="k">La vostra posta</span><span class="v">Aruba &mdash; <b>non si tocca</b></span></div></div>
 
-<h2>Se qualcosa non torna</h2>
-<p>Non è raro non avere sottomano le credenziali dell'hosting: spesso ce le ha chi vi ha fatto il
-sito anni fa. Non è un problema e non siete i primi.</p>
+<div class="avviso">
+  <p><b>Una cosa sola da sapere, ed è importante: la vostra posta non si tocca.</b>
+  Seguendo queste istruzioni <b>il dominio non viene modificato per niente</b> — si cambia solo il file
+  del sito. Le email continuano a funzionare esattamente come adesso.<br><br>
+  Se qualcuno vi propone di «cambiare i server dei nomi» o di «spostare il dominio», <b>fermatevi e
+  chiamateci</b>: è l'unica manovra che può spegnervi la posta, e qui non serve.</p>
+</div>
+
+<h2>Passo per passo</h2>
+<ol class="passi">
+  <li><b class="tit">Aprite il pannello di Aruba</b><span class="d">Cliccate qui: <a href="https://admin.aruba.it">admin.aruba.it</a>. Vi si apre una pagina che chiede <b>email e password</b>. Sono quelle che Aruba vi ha dato quando avete comprato lo spazio web — spesso sono in una vecchia email di Aruba, cercate «Aruba» nella vostra posta.</span></li>
+  <li><b class="tit">Entrate nella parte dell&#x27;hosting</b><span class="d">Una volta dentro, cercate la sezione che parla di <b>Hosting</b> (non «Domini», non «Posta»). Se vi perdete, potete andarci diretti da qui: <a href="https://managehosting.aruba.it">managehosting.aruba.it</a>.</span></li>
+  <li><b class="tit">Cercate la gestione dei file</b><span class="d">Dentro l'hosting cercate una voce che parla di <b>File</b>, <b>Gestione file</b> o <b>FTP</b>. È lo strumento che vi fa vedere i file del vostro sito, come una cartella sul computer.</span></li>
+  <li><b class="tit">Aprite la cartella del sito</b><span class="d">Vedrete un elenco di cartelle. Quella giusta si chiama <b>www</b> — su alcuni spazi si chiama <b>htdocs</b> o <b>public_html</b>. Apritela: dentro ci sono i file del vostro sito attuale.</span></li>
+  <li><b class="tit">Mettete da parte il sito vecchio</b><span class="d">Se dentro trovate un file che si chiama <b>index.html</b> o <b>index.htm</b>, <b>rinominatelo</b> in <code>index-vecchio.html</code>. Non cancellatelo: così se qualcosa non vi torna, rimettete il nome di prima e tutto torna com'era.</span></li>
+  <li><b class="tit">Caricate il file nuovo</b><span class="d">Cliccate su <b>Carica</b> (o <b>Upload</b>) e scegliete il file <code>index.html</code> che vi abbiamo mandato. Aspettate che finisca: è un file un po' pesante, ci mette qualche secondo.</span></li>
+  <li><b class="tit">Guardate il risultato</b><span class="d">Aprite il vostro indirizzo dal telefono. Dovreste vedere il sito nuovo. Se vedete ancora quello vecchio, aspettate due minuti e ricaricate tenendo premuto il tasto di ricarica.</span></li>
+</ol>
+<p class="piccolo">Aruba ha anche le sue guide con le fotografie delle schermate: <a href="https://guide.aruba.it/hosting-e-domini/">https://guide.aruba.it/hosting-e-domini/</a></p>
+
+<h2>Se vi bloccate</h2>
+<div class="aiuto"><p><b>Non trovate la password?</b> Succede quasi sempre. Da qui la rifate in due minuti, arriva una email: <a href="https://mylogin.aruba.it/auth/realms/aruba/login-actions/reset-credentials">recupera la password di Aruba</a>. Se l'indirizzo email a cui dovrebbe arrivare non è più vostro, chiamate direttamente Assistenza Aruba: 0575 0505.</p></div>
 <div class="aiuto">
-  <p><b>Ce ne occupiamo noi.</b> Scriveteci a <a href="mailto:marco.work.95@gmail.com">marco.work.95@gmail.com</a> dicendoci il
-  nome del locale: vi diciamo cosa serve e lo colleghiamo noi al posto vostro. È un servizio a parte
-  e ve lo quotiamo prima, senza sorprese.</p>
+  <p><b>Oppure lo facciamo noi.</b> Scriveteci a <a href="mailto:marco.work.95@gmail.com">marco.work.95@gmail.com</a> con il nome del
+  locale: ci mettiamo mezz'ora e lo colleghiamo al posto vostro. È un servizio a parte, ve lo diciamo
+  prima quanto costa, e se preferite di no non succede niente &mdash; il file resta vostro e potete
+  farlo fare a chiunque.</p>
 </div>
 
 <footer>
-Istruzioni generate il 09/09/2026 per Osteria Antico Giardinetto · anticogiardinetto.it<br>
-Concreta · marco.work.95@gmail.com
+Istruzioni preparate il 09/09/2026 per Osteria Antico Giardinetto &middot; anticogiardinetto.it<br>
+Concreta &middot; marco.work.95@gmail.com
 </footer>
 </div></body></html>
