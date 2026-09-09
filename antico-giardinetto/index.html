@@ -685,30 +685,62 @@
     });
   });
 
-  var T = {
-    it:{aperto:"Aperto adesso · fino alle 22:00", apre:"Stasera dalle 18:30", lunedi:"Su prenotazione · chiamateci", chiuso:"Su prenotazione · chiamateci"},
-    en:{aperto:"Open now · until 10:00 pm", apre:"Tonight from 6:30 pm", lunedi:"By reservation · call us", chiuso:"By reservation · call us"}
+  /* cena 18:30-22:00; chiuso il lunedì e a pranzo */
+  var GIARDINETTO = {
+    Mon: [], Tue: [[1110,1320]], Wed: [[1110,1320]], Thu: [[1110,1320]],
+    Fri: [[1110,1320]], Sat: [[1110,1320]], Sun: [[1110,1320]]
   };
-  function stato(){
-    var box = document.getElementById("stato"), txt = document.getElementById("stato-testo");
-    if (!box || !txt) return;
-    var p = {};
-    try {
-      new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false})
-        .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
-    } catch(e) {
-      var d = new Date();
-      p.weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()];
-      p.hour = String(d.getHours()); p.minute = String(d.getMinutes());
-    }
-    var min = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
-    var t = T[lang] || T.it, cls = "chiuso", msg = t.chiuso;
-    if (p.weekday === "Mon") { msg = t.lunedi; }
-    else if (min >= 1110 && min < 1320) { cls = "aperto"; msg = t.aperto; }
-    else if (min < 1110) { msg = t.apre; }
-    box.className = "stato aperto";
-    txt.textContent = msg;
+  var T = {
+    it:{ aperto:"Aperto adesso · fino alle ", oggi:"Oggi dalle ", domani:"Domani dalle ",
+         riapre:"Riapre ", alle:" alle ", prenota:"Su prenotazione · chiamateci" },
+    en:{ aperto:"Open now · until ", oggi:"Today from ", domani:"Tomorrow from ",
+         riapre:"Reopens ", alle:" at ", prenota:"By reservation · call us" }
+  };
+var GIORNI = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var NOMEGIORNO = {
+  it:{Sun:"domenica",Mon:"lunedì",Tue:"martedì",Wed:"mercoledì",Thu:"giovedì",Fri:"venerdì",Sat:"sabato"},
+  en:{Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"}
+};
+function ora(m){ var h = Math.floor(m/60), q = m%60; return h + ":" + (q < 10 ? "0"+q : q); }
+
+function adesso(){
+  var p = {};
+  try {
+    new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false})
+      .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
+  } catch(e) {
+    var d = new Date();
+    p.weekday = GIORNI[d.getDay()];
+    p.hour = String(d.getHours()); p.minute = String(d.getMinutes());
   }
+  p.min = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return p;
+}
+
+function stato(){
+  var box = document.getElementById("stato"), txt = document.getElementById("stato-testo");
+  if (!box || !txt) return;
+  var p = adesso(), t = T[lang] || T.it, msg = null;
+  var oggi = GIARDINETTO[p.weekday] || [];
+  for (var i = 0; i < oggi.length; i++) {
+    if (p.min >= oggi[i][0] && p.min < oggi[i][1]) { msg = t.aperto + ora(oggi[i][1]); break; }
+    if (p.min <  oggi[i][0]) { msg = t.oggi + ora(oggi[i][0]); break; }
+  }
+  if (msg === null) {
+    var g = GIORNI.indexOf(p.weekday);
+    for (var d = 1; d <= 7; d++) {
+      var sigla = GIORNI[(g + d) % 7], fasce = GIARDINETTO[sigla] || [];
+      if (fasce.length) {
+        msg = (d === 1) ? t.domani + ora(fasce[0][0])
+                        : t.riapre + NOMEGIORNO[lang][sigla] + t.alle + ora(fasce[0][0]);
+        break;
+      }
+    }
+  }
+  box.className = "stato aperto";          /* il pallino resta sempre verde */
+  txt.textContent = msg || t.prenota;
+}
+
   stato(); setInterval(stato, 60000);
 
   var chips = document.querySelectorAll(".chip");
