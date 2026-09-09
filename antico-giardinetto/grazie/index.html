@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Il vostro sito · Osteria Antico Giardinetto</title>
+<style>
+ @page{size:A4;margin:18mm 16mm}
+ *{box-sizing:border-box}
+ body{margin:0;background:#0B1310;color:#F3EEE3;font:17px/1.68 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+ .c{max-width:760px;margin:0 auto;padding:0 24px 60px}
+ h1{font-size:clamp(30px,6vw,46px);line-height:1.05;margin:0 0 14px;letter-spacing:-.02em}
+ h2{font-size:24px;margin:38px 0 14px;letter-spacing:-.01em}
+ p{margin:0 0 16px}
+ .occhio{font:600 13px/1 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A05C;margin:52px 0 16px}
+ .scheda{background:#16241E;border:1px solid #243530;border-radius:3px;padding:18px 20px;margin:0 0 26px}
+ .r{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:12px;padding:9px 0;border-top:1px solid #243530}
+ .r:first-child{border-top:0;padding-top:0}
+ .k{font:600 12.5px/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#C9A05C}
+ .v{color:#C9C3B5} .v b{color:#F3EEE3;font-weight:400} .q{color:#8B948E;font-size:14px}
+ ol{padding-left:22px;margin:0 0 18px} li{margin-bottom:11px;color:#C9C3B5} li b{color:#F3EEE3;font-weight:400}
+ .scarica{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 Arial,sans-serif;letter-spacing:.09em;
+   text-transform:uppercase;text-decoration:none;background:#C9A05C;color:#20180A;padding:14px 24px;border-radius:3px;margin:4px 0 8px}
+ @media print{ .scarica{display:none} }
+ .avviso{border-left:3px solid #D2704A;background:#2A1A12;padding:18px 20px;margin:24px 0;border-radius:0 3px 3px 0}
+ .avviso b{color:#F3EEE3}
+ .aiuto{border-left:3px solid #C9A05C;background:#1B2C25;padding:18px 20px;margin:24px 0;border-radius:0 3px 3px 0}
+ a{color:#C9A05C}
+ footer{margin-top:44px;padding-top:18px;border-top:1px solid #243530;font:12.5px/1.8 Arial,sans-serif;color:#8B948E}
+ @media print{ body{background:#fff;color:#111} .scheda{background:#f6f5f2;border-color:#ddd}
+   .k{color:#8a6a2a} .v{color:#333} .v b,li b,.avviso b{color:#000} li{color:#333}
+   .avviso{background:#fdf3ef;border-color:#c0563a} .aiuto{background:#f8f4ea;border-color:#a8802f}
+   a{color:#8a6a2a} footer{color:#666;border-color:#ddd} h1,h2{color:#111} .occhio{color:#8a6a2a} }
+</style></head><body><div class="c">
+
+<p class="occhio">Grazie</p>
+<h1>Il sito è vostro</h1>
+<p>Queste sono le istruzioni per metterlo online sul vostro indirizzo. Sono scritte apposta per la
+vostra situazione: abbiamo già guardato dove stanno il vostro sito e la vostra posta.</p>
+
+<a class="scarica" href="istruzioni.pdf" download>Scarica queste istruzioni in PDF</a>
+
+<h2>Come state messi adesso</h2>
+<div class="scheda"><div class="r"><span class="k">Il vostro indirizzo</span><span class="v"><b>anticogiardinetto.it</b></span></div><div class="r"><span class="k">Dove sta il sito oggi</span><span class="v">Aruba <span class=q>(webs35-189.aruba.it)</span></span></div><div class="r"><span class="k">Chi gestisce il DNS</span><span class="v">Aruba</span></div><div class="r"><span class="k">La vostra posta</span><span class="v">Aruba — <b>non si tocca</b></span></div></div>
+
+<div class="avviso">
+  <p><b>La cosa più importante: non toccate niente della posta.</b> Le vostre email funzionano
+  grazie a certi codici del dominio che si chiamano <b>record MX</b>. Seguendo queste istruzioni non
+  li sfiorate nemmeno, perché <b>il dominio non va modificato per niente</b>: si sostituisce solo il
+  file del sito. Se qualcuno vi propone di «spostare i server dei nomi», fermatevi e chiamateci.</p>
+</div>
+
+<h2>Cosa fare, passo per passo</h2>
+<p>Vi abbiamo mandato <b>un file solo</b>, si chiama <code>index.html</code>. Dentro c'è tutto:
+testi, fotografie e caratteri. Non serve caricare altro.</p>
+<ol>
+      <li>Entrate su admin.aruba.it con le credenziali del vostro hosting</li>
+      <li>Cliccate su <b>Gestione Hosting</b>, poi <b>Gestione File</b> (oppure collegatevi in FTP)</li>
+      <li>Aprite la cartella <b>www</b> (a volte si chiama <b>htdocs</b> o <b>public_html</b>)</li>
+      <li>Caricate il file <b>index.html</b> che vi abbiamo mandato</li>
+      <li>Se dentro c'è già un <b>index.html</b> o un <b>index.htm</b>, rinominatelo prima in <b>index-vecchio.html</b>: così potete tornare indietro in qualsiasi momento</li>
+</ol>
+<p>Appena caricato, aprite il vostro indirizzo dal telefono: dovreste vedere il sito nuovo.
+Se vedete ancora quello vecchio, aspettate qualche minuto e ricaricate la pagina.</p>
+<p>Il pannello del vostro fornitore è qui: <a href="https://admin.aruba.it">https://admin.aruba.it</a></p>
+
+<h2>Se qualcosa non torna</h2>
+<p>Non è raro non avere sottomano le credenziali dell'hosting: spesso ce le ha chi vi ha fatto il
+sito anni fa. Non è un problema e non siete i primi.</p>
+<div class="aiuto">
+  <p><b>Ce ne occupiamo noi.</b> Scriveteci a <a href="mailto:marco.work.95@gmail.com">marco.work.95@gmail.com</a> dicendoci il
+  nome del locale: vi diciamo cosa serve e lo colleghiamo noi al posto vostro. È un servizio a parte
+  e ve lo quotiamo prima, senza sorprese.</p>
+</div>
+
+<footer>
+Istruzioni generate il 09/09/2026 per Osteria Antico Giardinetto · anticogiardinetto.it<br>
+Concreta · marco.work.95@gmail.com
+</footer>
+</div></body></html>
