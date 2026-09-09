@@ -6,37 +6,46 @@
 <style>
  @page{size:A4;margin:16mm 15mm}
  *{box-sizing:border-box}
- body{margin:0;background:#0B1310;color:#F3EEE3;font:17px/1.68 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
- .c{max-width:740px;margin:0 auto;padding:0 24px 60px}
- h1{font-size:clamp(29px,5.6vw,44px);line-height:1.06;margin:0 0 12px;letter-spacing:-.02em}
- h2{font-size:23px;margin:40px 0 12px;letter-spacing:-.01em;page-break-after:avoid}
- p{margin:0 0 15px}
+ body{margin:0;background:#0B1310;color:#F3EEE3;font:18.5px/1.78 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+ .c{max-width:1000px;margin:0 auto;padding:0 40px 72px}
+ h1{font-size:clamp(32px,5.4vw,52px);line-height:1.04;margin:0 0 14px;letter-spacing:-.022em;max-width:16em}
+ h2{font-size:27px;margin:56px 0 18px;letter-spacing:-.012em;page-break-after:avoid}
+ p{margin:0 0 17px;max-width:62ch}
  code{font:15px ui-monospace,Menlo,monospace;background:#1B2C25;padding:2px 6px;border-radius:3px;color:#F3EEE3}
  .occhio{font:600 13px/1 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A05C;margin:48px 0 14px}
- .sotto{font:600 15px/1.6 Arial,sans-serif;color:#C9C3B5;margin:0 0 26px}
- .scheda{background:#16241E;border:1px solid #243530;border-radius:3px;padding:16px 18px;margin:0 0 24px}
- .r{display:grid;grid-template-columns:minmax(115px,175px) 1fr;gap:12px;padding:8px 0;border-top:1px solid #243530}
+ .sotto{font:600 16px/1.7 Arial,sans-serif;color:#C9C3B5;margin:0 0 30px;max-width:44em}
+ .doppia{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+ @media (max-width:860px){ .doppia{grid-template-columns:1fr;gap:0} }
+ .scheda{background:#16241E;border:1px solid #243530;border-radius:3px;padding:22px 24px;margin:0 0 26px}
+ .r{display:grid;grid-template-columns:minmax(130px,190px) 1fr;gap:16px;padding:11px 0;border-top:1px solid #243530}
  .r:first-child{border-top:0;padding-top:0}
  .k{font:600 12px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#C9A05C}
  .v{color:#C9C3B5} .v b{color:#F3EEE3;font-weight:400} .q{color:#8B948E;font-size:14px}
  ol.passi{counter-reset:p;list-style:none;margin:0;padding:0}
- ol.passi li{counter-increment:p;display:grid;grid-template-columns:38px 1fr;gap:14px;
-   padding:16px 0;border-top:1px solid #243530;page-break-inside:avoid}
- ol.passi li::before{content:counter(p);font:700 20px/1.2 Arial,sans-serif;color:#C9A05C}
- ol.passi .tit{grid-column:2;font:400 19px/1.35 Georgia,serif;color:#F3EEE3;display:block;margin-bottom:5px}
- ol.passi .d{grid-column:2;color:#C9C3B5;display:block}
+ ol.passi li{counter-increment:p;display:grid;grid-template-columns:52px 1fr;gap:20px;
+   padding:26px 0;border-top:1px solid #243530;page-break-inside:avoid}
+ ol.passi li::before{content:counter(p);font:700 26px/1.1 Arial,sans-serif;color:#C9A05C;
+   text-align:center;padding-top:4px}
+ ol.passi .tit{grid-column:2;font:400 22px/1.3 Georgia,serif;color:#F3EEE3;display:block;margin-bottom:9px}
+ ol.passi .d{grid-column:2;color:#C9C3B5;display:block;max-width:60ch}
  ol.passi .d b{color:#F3EEE3;font-weight:400}
- .prima{background:#1B2C25;border:1px solid #2C4238;border-radius:3px;padding:18px 20px;margin:0 0 8px}
- .prima ul{margin:8px 0 0;padding-left:20px} .prima li{margin-bottom:7px;color:#C9C3B5}
- .avviso{border-left:3px solid #D2704A;background:#2A1A12;padding:17px 19px;margin:22px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
- .aiuto{border-left:3px solid #C9A05C;background:#1B2C25;padding:17px 19px;margin:22px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
+ .prima{background:#1B2C25;border:1px solid #2C4238;border-radius:3px;padding:22px 24px;margin:0 0 26px}
+ .prima ul{margin:6px 0 0;padding-left:22px} .prima li{margin-bottom:11px;color:#C9C3B5}
+ .avviso{border-left:4px solid #D2704A;background:#2A1A12;padding:22px 26px;margin:30px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
+ .aiuto{border-left:4px solid #C9A05C;background:#1B2C25;padding:22px 26px;margin:26px 0;border-radius:0 3px 3px 0;page-break-inside:avoid}
+ .avviso p,.aiuto p{max-width:64ch}
  .avviso b,.aiuto b{color:#F3EEE3}
  .piccolo{font-size:15px;color:#8B948E}
  a{color:#C9A05C}
  .scarica{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 Arial,sans-serif;letter-spacing:.09em;
    text-transform:uppercase;text-decoration:none;background:#C9A05C;color:#20180A;padding:14px 24px;border-radius:3px;margin:2px 0 6px}
  footer{margin-top:42px;padding-top:16px;border-top:1px solid #243530;font:12.5px/1.8 Arial,sans-serif;color:#8B948E}
- @media print{ body{background:#fff;color:#111} .scarica{display:none}
+ @media print{ body{background:#fff;color:#111;font-size:11.5pt;line-height:1.6}
+   .c{max-width:none;padding:0} .doppia{grid-template-columns:1fr;gap:0}
+   h1{font-size:26pt} h2{font-size:15pt;margin:22pt 0 8pt}
+   ol.passi li{padding:12pt 0;grid-template-columns:34px 1fr;gap:14px}
+   ol.passi li::before{font-size:17pt} ol.passi .tit{font-size:13pt}
+   p,.d,.prima li{max-width:none} .scarica{display:none}
    .scheda,.prima{background:#f6f5f2;border-color:#ddd} code{background:#eee;color:#111}
    .k,.occhio,ol.passi li::before{color:#8a6a2a} .v,.d,.prima li,.piccolo{color:#333}
    .v b,.d b,.avviso b,.aiuto b,ol.passi .tit{color:#000}
@@ -50,18 +59,23 @@
 
 <a class="scarica" href="istruzioni.pdf" download>Scarica queste istruzioni in PDF</a>
 
-<h2>Cosa vi serve prima di cominciare</h2>
-<div class="prima">
+<div class="doppia">
+ <div>
+  <h2>Cosa vi serve prima di cominciare</h2>
+  <div class="prima">
   <ul>
     <li><b>Il file che vi abbiamo mandato</b>, si chiama <code>index.html</code>. Salvatelo sul computer e ricordatevi dov'è.</li>
     <li><b>Email e password di Seeweb</b>, dove è ospitato il vostro sito. Se non le trovate, sotto c'è scritto come recuperarle.</li>
     <li>Un computer. Dal telefono si può fare, ma è scomodo.</li>
   </ul>
+  </div>
+ </div>
+ <div>
+  <h2>La vostra situazione</h2>
+  <p>L'abbiamo già guardata noi, così non dovete cercare niente:</p>
+  <div class="scheda"><div class="r"><span class="k">Il vostro sito</span><span class="v"><b>ristorantepirana.it</b></span></div><div class="r"><span class="k">Chi vi ospita il sito</span><span class="v"><b>Seeweb</b> <span class="q">(vm0093.cs02.seeweb.it)</span></span></div><div class="r"><span class="k">Chi gestisce il dominio</span><span class="v">ALA</span></div><div class="r"><span class="k">La vostra posta</span><span class="v">Seeweb &mdash; <b>non si tocca</b></span></div></div>
+ </div>
 </div>
-
-<h2>La vostra situazione</h2>
-<p>L'abbiamo già guardata noi, così non dovete cercare niente:</p>
-<div class="scheda"><div class="r"><span class="k">Il vostro sito</span><span class="v"><b>ristorantepirana.it</b></span></div><div class="r"><span class="k">Chi vi ospita il sito</span><span class="v"><b>Seeweb</b> <span class="q">(vm0093.cs02.seeweb.it)</span></span></div><div class="r"><span class="k">Chi gestisce il dominio</span><span class="v">ALA</span></div><div class="r"><span class="k">La vostra posta</span><span class="v">Seeweb &mdash; <b>non si tocca</b></span></div></div>
 
 <div class="avviso">
   <p><b>Una cosa sola da sapere, ed è importante: la vostra posta non si tocca.</b>
