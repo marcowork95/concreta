@@ -204,6 +204,25 @@
     .azione svg{width:16px;height:16px;flex:none}
   }
   @media (max-width:380px){ .top .cont{gap:8px} .marchio img{height:26px} }
+
+  .compra{background:var(--ottone);color:#1E1206;padding:clamp(44px,7vw,72px) 0}
+  .compra .cont{max-width:820px}
+  .compra .occhio2{font-family:var(--et);font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;opacity:.72;margin:0 0 16px}
+  .compra h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.04;margin:0 0 18px;color:#1E1206;text-wrap:balance}
+  .compra .intro{font-size:clamp(17px,2.1vw,20px);line-height:1.6;margin:0 0 26px;max-width:34em;color:#33200E}
+  .compra .intro strong{font-weight:600;color:#1E1206}
+  .incluso{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px;margin:0 0 30px;list-style:none;padding:0}
+  .incluso li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;padding:9px 0;border-top:1px solid rgba(30,18,6,.16);font-size:16.5px;color:#33200E;text-wrap:pretty}
+  .incluso li svg{width:18px;height:18px;margin-top:4px;color:#1E1206}
+  .prezzone{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin:0 0 22px}
+  .prezzone .p{font-family:var(--et);font-weight:700;font-size:clamp(46px,10vw,72px);line-height:1;color:#1E1206;font-variant-numeric:tabular-nums}
+  .prezzone .p small{font-size:.42em;font-weight:600;letter-spacing:.06em}
+  .prezzone .q{font-family:var(--et);font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5A3A1B}
+  .bcompra{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--et);font-size:19px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:17px 32px;border-radius:3px;background:#1E1206;color:var(--ottone);border:1px solid #1E1206;width:100%;max-width:420px}
+  .bcompra svg{width:19px;height:19px;flex:none}
+  .dopo{margin:18px 0 0;font-size:15.5px;color:#4A2F14;text-wrap:pretty}
+  .dopo a{color:#1E1206}
+  @media (max-width:640px){ .incluso{grid-template-columns:minmax(0,1fr)} }
 </style>
 </head>
 <body>
@@ -412,6 +431,38 @@
   </div>
 </section>
 
+
+<section class="compra" id="compra">
+  <div class="cont">
+    <p class="occhio2" data-it="Questo sito è già pronto" data-en="This site is already finished">Questo sito è già pronto</p>
+    <h2 data-it="Se vi piace, è vostro" data-en="If you like it, it is yours">Se vi piace, è vostro</h2>
+    <p class="intro" data-it="Non c'è niente da progettare né da aspettare: quello che state guardando è il sito di Ristorante Il Piraña, finito. Ve lo consegniamo <strong>lo stesso giorno</strong>, con le istruzioni per agganciarlo al vostro indirizzo. Se non lo prendete, fra poche ore questa pagina si cancella da sola." data-en="There is nothing to design and nothing to wait for: what you are looking at is the website for Ristorante Il Piraña, finished. We deliver it <strong>the same day</strong>, with the instructions to connect it to your own address. If you do not take it, in a few hours this page deletes itself.">Non c'è niente da progettare né da aspettare: quello che state guardando è il sito di Ristorante Il Piraña, finito. Ve lo consegniamo <strong>lo stesso giorno</strong>, con le istruzioni per agganciarlo al vostro indirizzo. Se non lo prendete, fra poche ore questa pagina si cancella da sola.</p>
+
+    <ul class="incluso">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Il sito finito, pronto per il vostro indirizzo" data-en="The finished site, ready for your own address">Il sito finito, pronto per il vostro indirizzo</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Le istruzioni per agganciarlo, scritte passo per passo" data-en="Step-by-step instructions to connect it">Le istruzioni per agganciarlo, scritte passo per passo</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Italiano e inglese, con il cambio lingua" data-en="Italian and English, with the language switch">Italiano e inglese, con il cambio lingua</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Le prenotazioni: telefono e modulo che arriva per email" data-en="Bookings: phone and a form that reaches you by email">Le prenotazioni: telefono e modulo che arriva per email</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Si vede bene dal telefono, che è da dove vi cercano" data-en="It works properly on a phone, which is where people look for you">Si vede bene dal telefono, che è da dove vi cercano</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Nessun canone a noi: si paga una volta e basta" data-en="No subscription to us: you pay once and that is it">Nessun canone a noi: si paga una volta e basta</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Il sito resta vostro: dominio e spazio sono intestati a voi" data-en="The site stays yours: domain and hosting are in your name">Il sito resta vostro: dominio e spazio sono intestati a voi</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span data-it="Le vostre foto vere, aggiornabili quando volete" data-en="Your own photographs, updateable whenever you like">Le vostre foto vere, aggiornabili quando volete</span></li>
+    </ul>
+
+    <div class="prezzone">
+      <span class="p">390<small> €</small></span>
+      <span class="q" data-it="una volta sola &middot; tutto incluso" data-en="one-off &middot; everything included">una volta sola &middot; tutto incluso</span>
+    </div>
+
+    <a class="bcompra" href="https://buy.stripe.com/8x24gy4695gR9VSal72wU0Q" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg>
+      <span data-it="Prendi questo sito" data-en="Get this site">Prendi questo sito</span>
+    </a>
+
+    <p class="dopo" data-it="Pagamento sicuro con carta. Dopo il pagamento vi mandiamo il sito e <strong>le istruzioni per agganciarlo al vostro dominio e al vostro hosting</strong>, scritte passo per passo. Dominio e spazio restano intestati a voi: il sito è vostro davvero e non resta in ostaggio di nessuno. Se avete domande prima: <a href='mailto:marco.work.95@gmail.com'>marco.work.95@gmail.com</a>." data-en="Secure card payment. After payment we send you the site and <strong>step-by-step instructions to connect it to your own domain and hosting</strong>. Domain and hosting stay in your name: the site is genuinely yours and is not held hostage by anyone. Any questions first: <a href='mailto:marco.work.95@gmail.com'>marco.work.95@gmail.com</a>.">Pagamento sicuro con carta. Dopo il pagamento vi mandiamo il sito e <strong>le istruzioni per agganciarlo al vostro dominio e al vostro hosting</strong>, scritte passo per passo. Dominio e spazio restano intestati a voi: il sito è vostro davvero e non resta in ostaggio di nessuno. Se avete domande prima: <a href="mailto:marco.work.95@gmail.com">marco.work.95@gmail.com</a>.</p>
+  </div>
+</section>
+
 <footer>
   <div class="cont">
     <div class="piede">
@@ -603,7 +654,7 @@
     if (dentroCornice) fuori(indirizzo); else window.location.href = indirizzo;
   });
 
-  var SCADENZA = "2026-09-10T16:26:54+00:00";
+  var SCADENZA = "2026-09-11T10:46:18+00:00";
   function orologio(){
     var box = document.getElementById("conta");
     if (!box || !SCADENZA || SCADENZA.indexOf("{{") === 0) return;
