@@ -12,5 +12,9 @@
  "legiarine": {
   "scade": "2026-09-11T19:33:33.110876+00:00",
   "venduto": false
+ },
+ "camalli": {
+  "scade": "2026-09-12T08:06:10.846808+00:00",
+  "venduto": false
  }
 }
