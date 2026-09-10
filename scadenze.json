@@ -32,5 +32,9 @@
  "visini": {
   "scade": "2026-09-12T09:34:21.356075+00:00",
   "venduto": false
+ },
+ "turismo": {
+  "scade": "2026-09-12T09:39:32.611739+00:00",
+  "venduto": false
  }
 }

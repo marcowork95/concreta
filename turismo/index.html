@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141110">
+<meta name="description" content="Steak house e cucina tipica emiliana a Modena dal 1987, in strada Cave di Ramo. Carne alla griglia e piatti della tradizione, con bed and breakfast annesso.">
+<title>Ristorante Turismo · Steak House · Modena</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap">
+
+<style>
+  :root{
+    --notte:#141110; --notte2:#1D1817; --pietra:#251E1C; --carta:#2E2523;
+    --avorio:#F5F1EA; --avorio2:#CEC4BB; --grigio:#948880;
+    --ottone:#C4603E; --ottone2:#8C3A1C; --scuro:#1E0E07;
+    --verde:#8AAE72; --rosso:#C4603E;
+    --filo:#312724; --filo2:#4C3E39;
+    --display:"Bodoni Moda",Georgia,serif;
+    --testo:"Spectral",Georgia,serif;
+    --et:"Barlow Condensed","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--notte);color:var(--avorio);font-family:var(--testo);font-weight:300;
+       font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;hyphens:none}
+  img{display:block;max-width:100%;height:auto}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.012em;text-wrap:balance}
+  em{font-family:var(--testo);font-style:italic}
+  p{margin:0 0 18px;text-wrap:pretty;overflow-wrap:break-word}
+  p:last-child{margin-bottom:0}
+  a{color:var(--ottone)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ottone);outline-offset:3px;border-radius:2px}
+  .cont{max-width:1120px;margin:0 auto;padding:0 24px}
+  .occhio{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ottone);margin:0 0 18px}
+
+  /* ---- la striscia dell'anteprima, col tempo che scorre e il pulsante ---- */
+  .prev{background:var(--ottone);color:var(--scuro);font-family:var(--et);font-size:14px;letter-spacing:.03em;
+    line-height:1.4;padding:9px 16px;position:sticky;top:0;z-index:60;border-bottom:2px solid var(--scuro);
+    display:flex;align-items:center;justify-content:center;gap:14px 20px;flex-wrap:wrap;text-align:center}
+  .prev .testo{max-width:62ch;text-wrap:pretty}
+  .prev .destra{display:flex;align-items:center;gap:12px;flex:none}
+  .prev b{font-weight:700}.prev a{color:var(--scuro);font-weight:600}
+  .prev .conta{display:inline-block;background:var(--scuro);color:var(--ottone);font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:99px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .prev .btn-compra{display:inline-flex;align-items:center;gap:9px;background:var(--scuro);
+    text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.09em;text-transform:uppercase;
+    padding:10px 20px;border-radius:99px;white-space:nowrap;border:1px solid var(--scuro)}
+  .prev .btn-compra,.prev .btn-compra *{color:#FFFFFF}
+  .prev .btn-compra svg{width:16px;height:16px;flex:none}
+  @media (max-width:760px){
+    .prev{gap:8px;padding:10px 14px;flex-direction:column}
+    .prev .testo{font-size:13px;line-height:1.35}
+    .prev .destra{flex-direction:column;gap:8px;width:100%;max-width:340px}
+    .prev .conta{font-size:12.5px;padding:3px 10px}
+    .prev .btn-compra{width:100%;justify-content:center;font-size:15px;padding:11px 14px}
+  }
+  .scaduta{position:fixed;inset:0;z-index:200;background:var(--notte);display:flex;align-items:center;justify-content:center;padding:32px;text-align:center}
+  .scaduta .b{max-width:30em}
+  .scaduta h2{font-size:clamp(30px,7vw,48px);margin:0 0 18px}
+  .scaduta p{color:var(--avorio2);font-size:18px}
+
+  .top{position:relative;z-index:50;background:rgba(20,17,16,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
+  .top .cont{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
+  .marchio{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+  .marchio img{height:34px;width:auto;flex:none}
+  .marchio .nomeq{font-family:var(--display);font-size:20px;color:var(--avorio);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  @media (max-width:520px){ .marchio .nomeq{display:none} .marchio img{height:30px} }
+  .nav{display:flex;align-items:center;gap:20px;flex:none}
+  .nav a{font-family:var(--et);font-size:15px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--avorio2);text-decoration:none;white-space:nowrap}
+  .nav a:hover{color:var(--ottone)}
+  .lingua{display:flex;border:1px solid var(--filo2);border-radius:3px;overflow:hidden;flex:none}
+  .lingua button{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.1em;padding:9px 12px;background:transparent;color:var(--avorio2);border:0;cursor:pointer}
+  .lingua button[aria-pressed="true"]{background:var(--ottone);color:var(--scuro)}
+
+  .apertura{position:relative;min-height:clamp(470px,76vh,660px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--filo)}
+  .apertura .sfondo{position:absolute;inset:0;background-size:cover;background-position:center 42%;transform:scale(1.04)}
+  .apertura .velo{position:absolute;inset:0;background:
+     radial-gradient(78% 62% at 24% 26%, rgba(196,96,62,.14), rgba(196,96,62,0) 62%),
+     linear-gradient(180deg, rgba(20,17,16,.55) 0%, rgba(20,17,16,.28) 36%, rgba(20,17,16,.97) 100%)}
+  .apertura .cont{position:relative;padding-top:52px;padding-bottom:clamp(32px,5vw,52px)}
+  .stato{display:inline-flex;align-items:center;gap:9px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;background:rgba(20,17,16,.78);border:1px solid var(--filo2);border-radius:99px;padding:7px 15px;margin-bottom:20px}
+  .pallino{width:8px;height:8px;border-radius:50%;background:var(--grigio);flex:none}
+  .stato.aperto .pallino{background:var(--verde);box-shadow:0 0 0 4px rgba(138,174,114,.18)}
+  .stato.chiuso .pallino{background:var(--rosso)}
+  .apertura h1{font-size:clamp(46px,10.5vw,100px);line-height:.94;letter-spacing:-.035em;margin:0 0 8px}
+  .apertura .sub{font-family:var(--testo);font-style:italic;font-size:clamp(19px,2.6vw,27px);color:var(--avorio2);margin:0 0 16px;font-weight:400}
+  .apertura .dida{font-size:clamp(17px,2vw,19.5px);color:var(--avorio2);max-width:34em;margin:0 0 26px}
+  .azioni{display:flex;flex-wrap:wrap;gap:11px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--et);font-size:17px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:3px;background:var(--ottone);color:var(--scuro);border:1px solid var(--ottone);cursor:pointer;white-space:nowrap}
+  .btn.vuoto{background:rgba(20,17,16,.62);color:var(--ottone)}
+  .btn.verde{background:#25A55B;border-color:#25A55B;color:#06240F}
+  .btn svg{width:17px;height:17px;flex:none}
+
+  .fascia{background:var(--notte2);border-bottom:1px solid var(--filo)}
+  .fascia .cont{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--filo);padding:0}
+  .fascia div{background:var(--notte2);padding:20px 24px}
+  .fascia .k{font-family:var(--et);font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--grigio);display:block;margin-bottom:6px}
+  .fascia .v{font-size:16.5px;line-height:1.5;display:block}
+  .fascia .v a{color:var(--avorio);text-decoration:none;border-bottom:1px solid var(--ottone2)}
+
+  /* ---- la fascia dei numeri: solo fatti loro, nessun voto inventato ---- */
+  .numeri{background:var(--pietra);border-bottom:1px solid var(--filo)}
+  .numeri .cont{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,4vw,44px);align-items:center;padding-top:28px;padding-bottom:28px}
+  .cifra{text-align:center;flex:none}
+  .cifra .n{font-family:var(--et);font-weight:700;font-size:clamp(52px,10vw,76px);line-height:1;color:var(--ottone);display:block;font-variant-numeric:tabular-nums}
+  .cifra .su{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio);display:block;margin-top:4px}
+  .numeri .dice p{margin:0 0 8px;font-size:17.5px;color:var(--avorio2)}
+  .numeri .dice p b{color:var(--avorio);font-weight:500}
+
+  section{padding:clamp(52px,7.5vw,92px) 0}
+  section+section{border-top:1px solid var(--filo)}
+  h2{font-size:clamp(30px,4.6vw,50px);line-height:1.06;margin:0 0 22px}
+
+  .casa{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(26px,5vw,58px);align-items:start}
+  .casa p{font-size:18px;color:var(--avorio2)}
+  .casa p strong{color:var(--avorio);font-weight:400}
+  .ritratto{border:1px solid var(--filo);border-radius:3px;overflow:hidden;background:var(--notte2);margin:0}
+  .ritratto img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+  .ritratto figcaption{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grigio);padding:12px 14px;border-top:1px solid var(--filo)}
+  .fatti{display:grid;margin-top:26px}
+  .fatto{padding:14px 0;border-top:1px solid var(--filo);display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:16px;align-items:baseline}
+  .fatto:last-child{border-bottom:1px solid var(--filo)}
+  .fatto .t{font-family:var(--et);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ottone)}
+  .fatto .d{font-size:16.5px;color:var(--avorio2)}
+
+  .aic{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;
+       border-left:3px solid var(--verde);background:rgba(138,174,114,.08);padding:20px 22px;margin:26px 0;border-radius:0 3px 3px 0}
+  .aic svg{width:34px;height:34px;color:var(--verde);flex:none}
+  .aic p{margin:0;font-size:16.5px;color:var(--avorio)}
+  .aic b{color:var(--verde);font-weight:600}
+
+  .carta{background:var(--pietra)}
+  .testa{text-align:center;margin-bottom:30px}
+  .testa p{color:var(--avorio2);max-width:40em;margin:0 auto}
+  .fascione{position:relative;margin:0 0 26px;border:1px solid var(--filo);border-radius:3px;overflow:hidden}
+  .fascione img{width:100%;height:auto;aspect-ratio:11/7;object-fit:cover}
+  .fascione figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 13px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio);background:linear-gradient(180deg,rgba(20,17,16,0),rgba(20,17,16,.92))}
+
+  /* ---- la tavola: elenco scritto, perche' di piatti non esiste una foto loro ---- */
+  .tavola{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--filo);border:1px solid var(--filo);border-radius:3px;overflow:hidden}
+  .voce{background:var(--carta);padding:20px 22px;display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;align-items:start}
+  .voce svg{width:22px;height:22px;color:var(--ottone);margin-top:5px;flex:none}
+  .voce .n{font-family:var(--display);font-size:20px;color:var(--avorio);line-height:1.2;margin:0 0 5px}
+  .voce .d{font-size:15.5px;color:var(--avorio2);line-height:1.5;margin:0}
+  .nota{text-align:center;margin-top:30px;font-style:italic;color:var(--grigio);font-size:16px}
+
+  .galleria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+  .scatto{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--filo);margin:0}
+  .scatto img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+  .scatto figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio);background:linear-gradient(180deg,rgba(20,17,16,0),rgba(20,17,16,.92))}
+
+  .eventi{background:var(--pietra)}
+  .due{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(26px,5vw,56px);align-items:start}
+  .due p{color:var(--avorio2);font-size:18px}
+  .due p strong{color:var(--avorio);font-weight:400}
+  .coppia{display:grid;gap:12px}
+  .elenco{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+  .elenco li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;padding:8px 0;border-top:1px solid var(--filo);font-size:16.5px;color:var(--avorio2)}
+  .elenco li svg{width:17px;height:17px;margin-top:5px;color:var(--ottone);flex:none}
+
+  /* ---- le camere, con i prezzi veri ---- */
+  .listino{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--filo);border:1px solid var(--filo);border-radius:3px;overflow:hidden;margin-top:26px}
+  .stanza{background:var(--carta);padding:22px 20px}
+  .stanza .t{font-family:var(--display);font-size:22px;color:var(--avorio);margin:0 0 12px;line-height:1.2}
+  .stanza .p{font-family:var(--et);font-weight:700;font-size:38px;line-height:1;color:var(--ottone);font-variant-numeric:tabular-nums;white-space:nowrap;display:block}
+  .stanza .col{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grigio);display:block;margin-top:8px}
+  .stanza .sc{font-size:15.5px;color:var(--avorio2);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--filo)}
+
+  /* ---- l'enoteca: fondo chiaro, perche' le bottiglie sono scontornate su bianco ---- */
+  .vini{background:var(--avorio);color:#241B18}
+  .vini h2,.vini .indirizzo{color:#241B18}
+  .vini .occhio{color:var(--ottone2)}
+  .vini p{color:#4E4340}
+  .vini p strong{color:#241B18;font-weight:500}
+  .vini .testa p{color:#4E4340}
+  .bottiglie{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px}
+  .vino{background:#FFFFFF;border:1px solid #E1D8C7;border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+  .vino img{width:100%;height:auto;aspect-ratio:200/330;object-fit:contain;background:#F5F1EA}
+  .vino .b{padding:14px 15px 16px;border-top:1px solid #E9E1D2}
+  .vino .n{font-family:var(--display);font-size:19px;color:#241B18;margin:0 0 3px;line-height:1.15}
+  .vino .z{font-family:var(--et);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ottone2);margin:0 0 9px;display:block}
+  .vino .d{font-size:14.5px;line-height:1.5;color:#4E4340;margin:0}
+  .vino .g{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.08em;color:#7A6B58;margin:10px 0 0;display:block}
+  .cantinafoto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+  .cantinafoto .scatto{border-color:#E1D8C7}
+  .cantinafoto figcaption{color:#FFF}
+  .orariobox{margin-top:34px;border:1px solid #E1D8C7;border-radius:3px;background:#FFFFFF;padding:22px 24px}
+  .orariobox h3{font-family:var(--display);font-size:24px;color:#241B18;margin:0 0 14px}
+  .orariobox .riga{display:grid;grid-template-columns:minmax(140px,200px) minmax(0,1fr);gap:14px;padding:9px 0;border-top:1px solid #EDE5D6;font-size:16.5px;color:#4E4340}
+  .orariobox .riga .g{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ottone2)}
+  .vini .btn{background:var(--ottone2);border-color:var(--ottone2);color:#FFF6EC}
+  .vini .btn.vuoto{background:transparent;color:var(--ottone2)}
+
+  .strada{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(26px,5vw,60px);align-items:start}
+  .foto-strada{border:1px solid var(--filo);border-radius:3px;overflow:hidden;margin:0 0 20px}
+  .foto-strada img{width:100%;height:auto;aspect-ratio:11/7;object-fit:cover}
+  .indirizzo{font-family:var(--display);font-size:clamp(22px,3.4vw,30px);line-height:1.3;color:var(--avorio);margin:0 0 16px}
+  .dintorni{list-style:none;padding:0;margin:22px 0 0}
+  .dintorni li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:10px 0;border-top:1px solid var(--filo);font-size:16.5px;color:var(--avorio2)}
+  .dintorni li .km{font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.08em;color:var(--ottone);white-space:nowrap}
+
+  .prenota{background:var(--carta)}
+  .chiamata{display:block;text-decoration:none;text-align:center;border:1px solid var(--ottone);border-radius:4px;background:var(--ottone);padding:26px 20px 22px;margin:22px 0 6px}
+  .chiamata .et2{display:block;font-family:var(--et);font-size:14px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#6E3E19;margin-bottom:8px}
+  .chiamata .num{display:block;font-family:var(--et);font-weight:700;font-size:clamp(38px,9.4vw,62px);line-height:1.05;letter-spacing:.02em;color:var(--scuro);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .chiamata .ora{display:block;font-family:var(--et);font-size:15.5px;font-weight:600;letter-spacing:.06em;color:#503012;margin-top:12px}
+  .separa{display:flex;align-items:center;gap:14px;margin:30px 0 4px;color:var(--grigio)}
+  .separa::before,.separa::after{content:"";flex:1;height:1px;background:var(--filo2)}
+  .separa span{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+  .modulo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+  .campo{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .campo.largo{grid-column:1/-1}
+  .campo label{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grigio)}
+  .campo input,.campo select,.campo textarea{font-family:var(--testo);font-size:17px;color:var(--avorio);background:var(--notte2);border:1px solid var(--filo2);border-radius:3px;padding:12px 13px;width:100%;max-width:100%}
+  .campo textarea{min-height:84px;resize:vertical}
+  .invia{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:4px}
+  .esito{font-size:15.5px;color:var(--verde);font-style:italic}
+  .oppure{margin-top:20px;font-size:16px;color:var(--avorio2)}
+  .riepilogo{margin-top:22px;border:1px solid var(--ottone2);border-radius:3px;background:var(--notte2);padding:18px 18px 16px}
+  .riepilogo h4{font-family:var(--et);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ottone);margin:0 0 12px}
+  .riepilogo pre{font-family:var(--testo);font-size:16px;line-height:1.55;color:var(--avorio);white-space:pre-wrap;word-break:break-word;margin:0 0 16px;background:transparent}
+  .riepilogo .fine{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .riepilogo .btn{font-size:15px;padding:11px 18px}
+  .copiato{font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--verde)}
+  .avviso{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(10px);z-index:80;background:var(--ottone);color:var(--scuro);border-radius:99px;padding:12px 22px;font-family:var(--et);font-size:16px;font-weight:700;letter-spacing:.06em;box-shadow:0 8px 30px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;max-width:92vw;text-align:center}
+  .avviso.si{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media (min-width:641px){ .avviso{bottom:28px} }
+
+  footer{border-top:1px solid var(--filo);padding:40px 0 32px}
+  .piede{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:end}
+  .piede .nome{font-family:var(--display);font-size:21px;margin-bottom:7px}
+  .piede .r{font-size:15px;color:var(--grigio);line-height:1.8;text-wrap:pretty}
+  .piede .r a{color:var(--grigio)}
+  .crediti{margin-top:24px;padding-top:16px;border-top:1px solid var(--filo);font-family:var(--et);font-size:12.5px;letter-spacing:.05em;color:var(--filo2);text-wrap:pretty}
+  .azione{display:none}
+
+  @media (max-width:1000px){
+    .bottiglie{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
+  @media (max-width:900px){
+    .casa,.strada,.due{grid-template-columns:minmax(0,1fr)}
+    .fascia .cont{grid-template-columns:minmax(0,1fr)}
+    .nav a.solo-grande{display:none}
+    .ritratto{max-width:560px}
+    .listino{grid-template-columns:minmax(0,1fr)}
+    .cantinafoto{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  }
+  @media (max-width:640px){
+    body{font-size:16.5px;padding-bottom:64px}
+    .cont{padding:0 18px}
+    .apertura{min-height:auto}
+    .apertura .cont{padding-top:38px;padding-bottom:32px}
+    .stato{white-space:normal;text-align:left;line-height:1.3}
+    .numeri .cont{grid-template-columns:minmax(0,1fr);gap:16px;text-align:center}
+    .tavola{grid-template-columns:minmax(0,1fr)}
+    .elenco{grid-template-columns:minmax(0,1fr)}
+    .modulo{grid-template-columns:minmax(0,1fr)}
+    .piede{grid-template-columns:minmax(0,1fr)}
+    .fatto{grid-template-columns:minmax(0,1fr);gap:2px;padding:12px 0}
+    .galleria{grid-template-columns:1fr 1fr;gap:8px}
+    .scatto img{aspect-ratio:1/1}
+    .cantinafoto{grid-template-columns:minmax(0,1fr)}
+    .cantinafoto .scatto img{aspect-ratio:16/10}
+    .foto-strada img{aspect-ratio:16/9}
+    .bottiglie{grid-template-columns:1fr 1fr;gap:10px}
+    .orariobox .riga{grid-template-columns:minmax(0,1fr);gap:2px}
+    .dintorni li{grid-template-columns:minmax(0,1fr);gap:2px}
+    section{padding:44px 0}
+    .btn{flex:1 1 100%;white-space:normal;text-align:center;line-height:1.22;padding:13px 16px}
+    .azione{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--filo);border-top:1px solid var(--filo2)}
+    .azione a{background:var(--notte2);color:var(--avorio);font-family:var(--et);font-size:14.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:15px 6px;display:flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+    .azione a.p{background:var(--ottone);color:var(--scuro)}
+    .azione svg{width:16px;height:16px;flex:none}
+  }
+  @media (max-width:380px){ .top .cont{gap:8px} .marchio{font-size:17px} .azione a{font-size:13px;letter-spacing:.04em} }
+
+  .compra{background:var(--ottone);color:#1E0E07;padding:clamp(44px,7vw,72px) 0}
+  .compra .cont{max-width:820px}
+  .compra .occhio2{font-family:var(--et);font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;opacity:.74;margin:0 0 16px}
+  .compra h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.04;margin:0 0 18px;color:#1E0E07;text-wrap:balance}
+  .compra .intro{font-size:clamp(17px,2.1vw,20px);line-height:1.6;margin:0 0 26px;max-width:34em;color:#3A1E10}
+  .compra .intro strong{font-weight:600;color:#1E0E07}
+  .incluso{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px;margin:0 0 30px;list-style:none;padding:0}
+  .incluso li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;padding:9px 0;border-top:1px solid rgba(36,19,5,.17);font-size:16.5px;color:#3A1E10;text-wrap:pretty}
+  .incluso li svg{width:18px;height:18px;margin-top:4px;color:#1E0E07}
+  .prezzone{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;margin:0 0 22px}
+  .prezzone .p{font-family:var(--et);font-weight:700;font-size:clamp(46px,10vw,72px);line-height:1;color:#1E0E07;font-variant-numeric:tabular-nums}
+  .prezzone .p small{font-size:.42em;font-weight:600;letter-spacing:.06em}
+  .prezzone .q{font-family:var(--et);font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B3E1B}
+  .bcompra{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--et);font-size:19px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:17px 32px;border-radius:3px;background:#1E0E07;color:var(--ottone);border:1px solid #1E0E07;width:100%;max-width:430px}
+  .bcompra svg{width:19px;height:19px;flex:none}
+  .dopo{margin:18px 0 0;font-size:15.5px;color:#54341A;text-wrap:pretty}
+  .dopo a{color:#1E0E07}
+  @media (max-width:640px){ .incluso{grid-template-columns:minmax(0,1fr)} }
+
+  .strisciona{display:none}
+  @media (max-width:640px){
+    .strisciona{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      position:fixed;left:0;right:0;bottom:52px;z-index:56;
+      background:var(--notte);color:var(--avorio);text-decoration:none;
+      font-family:var(--et);font-size:14px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+      padding:11px 12px;border-top:1px solid var(--ottone);border-bottom:1px solid rgba(245,241,234,.46);white-space:nowrap;overflow:hidden;
+      box-shadow:0 -10px 24px -14px rgba(0,0,0,.7);
+    }
+    .strisciona .euro{background:var(--ottone);color:#1E0E07;border-radius:99px;padding:4px 11px;font-weight:700;flex:none;font-size:14px;letter-spacing:.02em}
+    .strisciona .tempo{font-variant-numeric:tabular-nums;color:var(--avorio2);font-size:12.5px;font-weight:600;flex:none;letter-spacing:0}
+    body{padding-bottom:118px}
+  }
+
+  /* ---- questo cliente non ha UNA fotografia: il sito vive di tipografia ---- */
+  .apertura.senzafoto{min-height:auto;background:
+      radial-gradient(120% 90% at 12% 0%, rgba(196,96,62,.12), rgba(196,96,62,0) 62%),
+      linear-gradient(180deg, var(--notte2) 0%, var(--notte) 100%)}
+  .apertura.senzafoto .cont{padding-top:clamp(56px,10vw,104px);padding-bottom:clamp(48px,7vw,80px)}
+  .apertura.senzafoto h1{font-size:clamp(44px,9.5vw,92px)}
+  .anno{font-family:var(--et);font-weight:700;font-size:clamp(60px,12vw,104px);line-height:.9;
+        color:var(--ottone);display:block;font-variant-numeric:tabular-nums}
+  .avviso-serio{border-left:3px solid var(--rosso);background:rgba(196,96,62,.10);padding:22px 24px;
+                border-radius:0 3px 3px 0;margin-top:28px}
+  .avviso-serio h3{font-family:var(--display);font-size:24px;color:var(--avorio);margin:0 0 10px}
+  .avviso-serio p{font-size:16.5px;color:var(--avorio2);margin:0 0 10px}
+  .avviso-serio p:last-child{margin-bottom:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "Ristorante Turismo · Steak House Grill", "description": "Steak house e cucina tipica emiliana a Modena dal 1987, in strada Cave di Ramo. Carne alla griglia e piatti della tradizione, con bed and breakfast annesso.", "url": "http://www.ristoranteturismo.com/", "telephone": "+39059826774", "servesCuisine": ["Steak house", "Emiliana", "Griglia"], "priceRange": 390, "address": {"@type": "PostalAddress", "streetAddress": "Strada Cave di Ramo 107", "addressLocality": "Modena", "addressCountry": "IT", "postalCode": "41123", "addressRegion": "MO"}, "legalName": "Turismo Ristorazione"}</script>
+</head>
+<body>
+<div class="prev">
+  <span class="testo">
+    <b>Anteprima</b> &mdash; proposta di sito per il Ristorante Turismo di Modena.
+  </span>
+  <span class="destra">
+    <span class="conta" id="conta">&mdash;</span>
+    <a class="btn-compra" href="https://buy.stripe.com/6oU28q7ilgZzgkg3WJ2wU0X" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg><span>Compra questo sito &middot; 390 &euro;</span>
+    </a>
+  </span>
+</div>
+
+<div class="top">
+  <div class="cont">
+    <a class="marchio" href="#"><span class="nomeq">Ristorante Turismo</span></a>
+    <nav class="nav">
+      <a class="solo-grande" href="#cucina">La cucina</a>
+      <a class="solo-grande" href="#dove">Dove siamo</a>
+      <a class="solo-grande" href="#prenota">Prenota</a>
+    </nav>
+  </div>
+</div>
+
+<header class="apertura senzafoto">
+  <div class="cont">
+    <div class="stato" id="stato"><span class="pallino"></span><span id="stato-testo">&mdash;</span></div>
+    <h1>Ristorante<br>Turismo</h1>
+    <p class="sub">steak house e cucina emiliana, a Modena dal 1987</p>
+    <p class="dida">La carne alla griglia e i piatti della tradizione emiliana, in strada Cave di Ramo. Con il bed and breakfast, per chi si ferma.</p>
+    <div class="azioni">
+      <a class="btn" href="tel:+39059826774"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A13 13 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5z"/></svg><span>Chiama 059&nbsp;826774</span></a>
+      <a class="btn vuoto" href="#dove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Come arrivare</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="fascia">
+  <div class="cont">
+    <div><span class="k">Prenotazioni</span><span class="v"><a href="tel:+39059826774">059&nbsp;826774</a><br>Meglio prenotare, soprattutto a pranzo</span></div>
+    <div><span class="k">Cosa siamo</span><span class="v">Steak house e cucina emiliana<br>Con bed and breakfast</span></div>
+    <div><span class="k">Dove</span><span class="v">Strada Cave di Ramo 107<br>41123 Modena</span></div>
+  </div>
+</div>
+
+<div class="numeri">
+  <div class="cont">
+    <div class="cifra">
+      <span class="anno">1987</span>
+      <span class="su">l&rsquo;anno in cui abbiamo aperto</span>
+    </div>
+    <div class="dice">
+      <p><b>Trentotto anni nello stesso posto</b>, in strada Cave di Ramo, alle porte di Modena.</p>
+      <p><b>Griglia ed Emilia insieme</b>: la carne cotta come va cotta, e i piatti che qui si fanno da sempre.</p>
+      <p><b>C&rsquo;&egrave; anche dove dormire</b>: il bed and breakfast &egrave; nello stesso posto del ristorante.</p>
+    </div>
+  </div>
+</div>
+
+<section id="cucina">
+  <div class="cont" style="max-width:780px">
+    <p class="occhio">La cucina</p>
+    <h2>La griglia, <em>e la tradizione</em></h2>
+    <p style="color:var(--avorio2);font-size:18px">Siamo una steak house e siamo un ristorante emiliano: le due cose stanno insieme dal 1987. Da una parte la carne alla griglia, dall&rsquo;altra la cucina tipica di qui.</p>
+    <p style="color:var(--avorio2);font-size:18px">Il men&ugrave; cambia, e la cosa pi&ugrave; semplice &egrave; chiamare: vi diciamo cosa c&rsquo;&egrave; oggi e vi teniamo il tavolo.</p>
+    <div class="azioni" style="margin-top:26px">
+      <a class="btn" href="tel:+39059826774"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A13 13 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5z"/></svg><span>Prenota un tavolo: 059&nbsp;826774</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="dove" class="carta">
+  <div class="cont strada">
+    <div>
+      <p class="occhio">Dove siamo</p>
+      <h2>A Modena, in <em>strada Cave di Ramo</em></h2>
+      <p style="color:var(--avorio2)">Siamo alle porte della citt&agrave;, con il parcheggio davanti. Se venite da fuori, la strada pi&ugrave; semplice &egrave; aprire le mappe qui accanto.</p>
+    </div>
+    <div>
+      <p class="indirizzo">Strada Cave di Ramo 107<br>41123 Modena</p>
+      <div class="azioni" style="margin-top:18px">
+        <a class="btn vuoto" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante%20Turismo%20Strada%20Cave%20di%20Ramo%20107%20Modena"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Aprilo nelle mappe</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prenota" id="prenota">
+  <div class="cont" style="max-width:700px">
+    <p class="occhio">Prenotazioni</p>
+    <h2>Il tavolo si tiene al telefono</h2>
+    <p style="color:var(--avorio2)">Chiamateci: vi diciamo cosa c&rsquo;&egrave; oggi, se c&rsquo;&egrave; posto, e se vi serve anche una camera.</p>
+    <a class="chiamata" href="tel:+39059826774">
+      <span class="et2">Tocca per chiamare</span>
+      <span class="num">059&nbsp;826774</span>
+      <span class="ora">ristorante e bed and breakfast</span>
+    </a>
+    <p class="oppure">Ci trovate anche su <a href="https://www.instagram.com/ristoranteturismo1987/" target="_blank" rel="noopener">Instagram</a> e su <a href="https://www.facebook.com/ristoranteturismo/" target="_blank" rel="noopener">Facebook</a>.</p>
+  </div>
+</section>
+
+<section class="compra" id="compra">
+  <div class="cont">
+    <p class="occhio2">Una cosa che dovete sapere</p>
+    <h2>Il vostro sito non c&rsquo;&egrave; pi&ugrave;</h2>
+    <p class="intro">Provate ad aprire <strong>ristoranteturismo.com</strong> adesso. Al posto del vostro sito risponde <strong>il pannello di controllo di chi vi ha bucato il server</strong>: un gestore di file che elenca le vostre cartelle e permette di scriverci dentro. Non &egrave; un guasto, &egrave; un&rsquo;intrusione, e i file toccati sono di giugno e luglio di quest&rsquo;anno.</p>
+    <p class="intro"><strong>Due cose vanno fatte, e sono distinte.</strong> La prima &egrave; far ripulire il server dal vostro fornitore: sostituire il sito non basta, perch&eacute; il problema &egrave; dentro la macchina. La seconda &egrave; avere di nuovo un sito &mdash; e quello, se vi piace, ce l&rsquo;avete davanti.</p>
+
+    <ul class="incluso">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Il sito finito, pronto per il vostro indirizzo</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Le istruzioni per agganciarlo, scritte passo per passo</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span><b>Una pagina sola, senza WordPress</b>: non c&rsquo;&egrave; niente da aggiornare e niente da bucare</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Nessun programma sul server: &egrave; un file, e basta</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Si vede bene dal telefono, che &egrave; da dove vi cercano</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Nessun canone a noi: si paga una volta e basta</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Le vostre fotografie e i vostri orari li mettiamo appena ce li date</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Il sito resta vostro: dominio e spazio sono intestati a voi</span></li>
+    </ul>
+
+    <div class="prezzone">
+      <span class="p">390<small> &euro;</small></span>
+      <span class="q">una volta sola &middot; tutto incluso</span>
+    </div>
+
+    <a class="bcompra" href="https://buy.stripe.com/6oU28q7ilgZzgkg3WJ2wU0X" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg>
+      <span>Prendi questo sito</span>
+    </a>
+
+    <p class="dopo">Questa anteprima &egrave; costruita solo su quello che si trova pubblicamente: nome, indirizzo, telefono e l&rsquo;anno di apertura. <strong>Le fotografie non ce ne sono</strong>, perch&eacute; del vostro sito non &egrave; rimasto niente da cui prenderle: mandatecele e le mettiamo, senza costi in pi&ugrave;. Stessa cosa per gli orari e per il men&ugrave;. Per qualsiasi domanda: <a href="mailto:marco.work.95@gmail.com">marco.work.95@gmail.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="cont">
+    <div class="piede">
+      <div>
+        <div class="nome">Ristorante Turismo &middot; Steak House</div>
+        <div class="r">
+          Strada Cave di Ramo 107 &middot; 41123 Modena<br>
+          <a href="tel:+39059826774">059&nbsp;826774</a><br>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="r">
+        Steak house e cucina emiliana, dal 1987<br>
+        Bed and breakfast<br>
+        Per gli orari, chiamateci
+      </div>
+    </div>
+    <div class="crediti">Anteprima dimostrativa. Il nome, il marchio e i dati appartengono al Ristorante Turismo.</div>
+  </div>
+</footer>
+
+<div class="avviso" id="avviso" role="status" aria-live="polite"></div>
+
+<div class="scaduta" id="scaduta" hidden>
+  <div class="b">
+    <h2>Questa anteprima &egrave; scaduta</h2>
+    <p>Il sito che avevamo preparato per il Ristorante Turismo non &egrave; pi&ugrave; disponibile a questo indirizzo. Se vi interessa ancora, scriveteci e ve lo rimettiamo online.</p>
+  </div>
+</div>
+
+<a class="strisciona" href="https://buy.stripe.com/6oU28q7ilgZzgkg3WJ2wU0X" target="_blank" rel="noopener">
+  <span>Compra questo sito</span>
+  <span class="euro">390 &euro;</span>
+  <span class="tempo" id="conta3"></span>
+</a>
+
+<nav class="azione" aria-label="Azioni" style="grid-template-columns:1.6fr 1fr">
+  <a class="p" href="tel:+39059826774"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A13 13 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5z"/></svg><span>Chiama</span></a>
+  <a href="#dove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Dove siamo</span></a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+  var lang = "it";
+
+  /* I loro orari NON sono verificati da nessuna fonte primaria — il sito e' stato bucato e non
+     esiste piu'. Quindi la tabella resta vuota e la targhetta dice di chiamare: e' la scappatoia
+     prevista dalla Regola 10, e qui e' l'unica cosa onesta da scrivere. */
+  var TURISMO = { Mon:[], Tue:[], Wed:[], Thu:[], Fri:[], Sat:[], Sun:[] };
+  var T = {
+    it:{ aperto:"Aperto adesso · fino alle ", oggi:"Oggi dalle ", domani:"Domani dalle ",
+         riapre:"Riapre ", alle:" alle ", prenota:"Su prenotazione · chiamateci" }
+  };
+var GIORNI = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var NOMEGIORNO = {
+  it:{Sun:"domenica",Mon:"lunedì",Tue:"martedì",Wed:"mercoledì",Thu:"giovedì",Fri:"venerdì",Sat:"sabato"},
+  en:{Sun:"Sunday",Mon:"Monday",Tue:"Tuesday",Wed:"Wednesday",Thu:"Thursday",Fri:"Friday",Sat:"Saturday"}
+};
+function ora(m){ var h = Math.floor(m/60), q = m%60; return h + ":" + (q < 10 ? "0"+q : q); }
+
+function adesso(){
+  var p = {};
+  try {
+    new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Rome",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false})
+      .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
+  } catch(e) {
+    var d = new Date();
+    p.weekday = GIORNI[d.getDay()];
+    p.hour = String(d.getHours()); p.minute = String(d.getMinutes());
+  }
+  p.min = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return p;
+}
+
+function stato(){
+  var box = document.getElementById("stato"), txt = document.getElementById("stato-testo");
+  if (!box || !txt) return;
+  var p = adesso(), t = T[lang] || T.it, msg = null;
+  var oggi = TURISMO[p.weekday] || [];
+  for (var i = 0; i < oggi.length; i++) {
+    if (p.min >= oggi[i][0] && p.min < oggi[i][1]) { msg = t.aperto + ora(oggi[i][1]); break; }
+    if (p.min <  oggi[i][0]) { msg = t.oggi + ora(oggi[i][0]); break; }
+  }
+  /* Certi giorni non hanno un orario fisso — il venerdi' di un ristorante kosher chiude due ore
+     prima del tramonto — e allora si scrive la regola invece di un'ora finta. Basta dichiarare
+     NOTE = { Fri: {it:"...", en:"..."} }: se manca, questo pezzo non fa niente. */
+  if (msg === null && typeof NOTE !== "undefined" && NOTE[p.weekday])
+    msg = NOTE[p.weekday][lang] || NOTE[p.weekday].it;
+  if (msg === null) {
+    var g = GIORNI.indexOf(p.weekday);
+    for (var d = 1; d <= 7; d++) {
+      var sigla = GIORNI[(g + d) % 7], fasce = TURISMO[sigla] || [];
+      if (fasce.length) {
+        msg = (d === 1) ? t.domani + ora(fasce[0][0])
+                        : t.riapre + NOMEGIORNO[lang][sigla] + t.alle + ora(fasce[0][0]);
+        break;
+      }
+    }
+  }
+  box.className = "stato aperto";          /* il pallino resta sempre verde */
+  txt.textContent = msg || t.prenota;
+}
+
+  stato(); setInterval(stato, 60000);
+
+  var avviso = document.getElementById("avviso"), timerAvviso;
+  function diLo(t){
+    if (!avviso) return;
+    avviso.textContent = t; avviso.classList.add("si");
+    clearTimeout(timerAvviso);
+    timerAvviso = setTimeout(function(){ avviso.classList.remove("si"); }, 3200);
+  }
+  function copia(testo, fatto, ripiego){
+    function ok(){ diLo(fatto); }
+    function aMano(){
+      var t = document.createElement("textarea");
+      t.value = testo; t.style.position = "fixed"; t.style.opacity = "0";
+      document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); ok(); } catch(e){ diLo(ripiego); }
+      document.body.removeChild(t);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(testo).then(ok, aMano);
+    else aMano();
+  }
+  var dentroCornice = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+  function fuori(href){ try { return !!window.open(href, "_blank"); } catch(e){ return false; } }
+  document.addEventListener("click", function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+    if (!a || !dentroCornice) return;
+    ev.preventDefault();
+    fuori(a.getAttribute("href"));
+    copia("059 826774", "Numero copiato: 059 826774", "Chiamate lo 059 826774");
+  });
+
+  var SCADENZA = "2026-09-12T09:39:32.611739+00:00";
+  function orologio(){
+    var box = document.getElementById("conta"), box3 = document.getElementById("conta3");
+    if (!box || !SCADENZA || SCADENZA.indexOf("{{") === 0) return;
+    var restano = new Date(SCADENZA).getTime() - Date.now();
+    if (restano <= 0) {
+      var sc = document.getElementById("scaduta");
+      if (sc) { sc.hidden = false; document.body.style.overflow = "hidden"; }
+      box.textContent = "scaduta";
+      if (box3) box3.textContent = "";
+      return;
+    }
+    var ore = Math.floor(restano / 3600000), min = Math.floor((restano % 3600000) / 60000);
+    box.textContent = "sparisce fra " + (ore >= 1 ? ore + " ore " + min + " min" : min + " minuti");
+    if (box3) box3.textContent = "\u2212" + (ore >= 1 ? ore + "h " + min + "m" : min + "m");
+  }
+  orologio(); setInterval(orologio, 30000);
+})();
+</script>
+
+</body>
+</html>
