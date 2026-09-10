@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1310">
+<title>Privacy · Bakery</title>
+<link rel="stylesheet" href="/_font/caratteri.css">
+<style>
+  :root{
+    --notte:#0B1310; --notte2:#101B17; --pietra:#16241E;
+    --avorio:#F3EEE3; --avorio2:#C9C3B5; --grigio:#8B948E;
+    --ottone:#C9A05C; --ottone2:#8E7139; --filo:#243530; --filo2:#31463F;
+    --display:"Bodoni Moda",Georgia,serif;
+    --testo:"Spectral",Georgia,serif;
+    --et:"Barlow Condensed","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--notte);color:var(--avorio);font-family:var(--testo);font-weight:300;
+       font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;hyphens:none}
+  .cont{max-width:720px;margin:0 auto;padding:0 24px}
+  a{color:var(--ottone);text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
+  h1,h2{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.015em;text-wrap:balance}
+  p{margin:0 0 16px;text-wrap:pretty;overflow-wrap:break-word}
+  p:last-child{margin-bottom:0}
+  .top{position:sticky;top:0;z-index:20;background:rgba(11,19,16,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
+  .top .cont{display:flex;align-items:center;justify-content:space-between;gap:14px;height:60px}
+  .marchio{font-family:var(--display);font-size:19px;color:var(--avorio);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .lingua{display:flex;border:1px solid var(--filo2);border-radius:3px;overflow:hidden;flex:none}
+  .lingua button{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.1em;padding:5px 10px;background:transparent;color:var(--grigio);border:0;cursor:pointer}
+  .lingua button[aria-pressed="true"]{background:var(--ottone);color:#241A08}
+  header.testa{padding:54px 0 30px;border-bottom:1px solid var(--filo)}
+  .occhio{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ottone);margin:0 0 16px}
+  h1{font-size:clamp(32px,6vw,50px);line-height:1.04;margin:0 0 16px}
+  .agg{font-family:var(--et);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grigio)}
+  section{padding:34px 0;border-bottom:1px solid var(--filo)}
+  h2{font-size:clamp(21px,3.2vw,27px);margin:0 0 14px}
+  .scheda{background:var(--pietra);border:1px solid var(--filo);border-radius:3px;padding:20px 22px;margin:6px 0 0}
+  .riga{display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:14px;padding:9px 0;border-top:1px solid var(--filo)}
+  .riga:first-child{border-top:0;padding-top:0}
+  .riga .k{font-family:var(--et);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ottone);text-wrap:nowrap}
+  .riga .v{color:var(--avorio2);text-wrap:pretty}
+  .netto{border-left:3px solid var(--ottone);background:var(--notte2);padding:18px 20px;margin:18px 0;border-radius:0 3px 3px 0}
+  .netto p{font-size:17.5px;color:var(--avorio)}
+  ul{margin:0 0 16px;padding-left:20px;color:var(--avorio2)}
+  li{margin-bottom:7px;text-wrap:pretty}
+  footer{padding:34px 0 46px;font-size:15px;color:var(--grigio)}
+  footer a{color:var(--grigio)}
+  @media (max-width:600px){ body{font-size:16.5px} .cont{padding:0 18px} .riga{grid-template-columns:minmax(0,1fr);gap:2px} }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="cont">
+    <a class="marchio" href="./">Bakery</a>
+    <div class="lingua" role="group" aria-label="Lingua">
+      <button type="button" data-lang="it" aria-pressed="true">IT</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div>
+
+<header class="testa">
+  <div class="cont">
+    <p class="occhio" data-it="Informativa" data-en="Privacy notice">Informativa</p>
+    <h1 data-it="Come trattiamo i vostri dati" data-en="How we handle your data">Come trattiamo i vostri dati</h1>
+    <p class="agg" data-it="Aggiornata al 10 settembre 2026" data-en="Updated 10 settembre 2026">Aggiornata al 10 settembre 2026</p>
+  </div>
+</header>
+
+<section>
+  <div class="cont">
+    <h2 data-it="In breve" data-en="In short">In breve</h2>
+    <div class="netto">
+      <p data-it="Questo sito <strong>non usa cookie</strong>, non vi segue, non ha statistiche e non manda niente a nessun altro. I caratteri con cui è scritto stanno su questo stesso sito, non su server di terzi. Quindi non c'è nessun banner da accettare: non c'è niente da accettare." data-en="This website <strong>uses no cookies</strong>, does not track you, has no analytics and sends nothing to anyone else. Even the typefaces are served from this site, not from third-party servers. That is why there is no banner to accept: there is nothing to accept.">Questo sito <strong>non usa cookie</strong>, non vi segue, non ha statistiche e non manda niente a nessun altro. I caratteri con cui è scritto stanno su questo stesso sito, non su server di terzi. Quindi non c'è nessun banner da accettare: non c'è niente da accettare.</p>
+    </div>
+    <p data-it="Trattiamo dei dati solo se siete voi a scriverci o a chiamarci per prenotare. Qui sotto c'è scritto quali, perché, per quanto tempo, e cosa potete chiederci." data-en="We only handle data if you call us to book a table. Below is what we handle, why, for how long, and what you can ask us.">Trattiamo dei dati solo se siete voi a scriverci o a chiamarci per prenotare. Qui sotto c'è scritto quali, perché, per quanto tempo, e cosa potete chiederci.</p>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Chi è responsabile" data-en="Who is responsible">Chi è responsabile</h2>
+    <p data-it="Il titolare del trattamento, cioè chi decide come vengono usati i vostri dati, è:" data-en="The data controller, that is whoever decides how your data is used, is:">Il titolare del trattamento, cioè chi decide come vengono usati i vostri dati, è:</p>
+    <div class="scheda">
+      <div class="riga"><span class="k" data-it="Chi siamo" data-en="Who we are">Chi siamo</span><span class="v">Bakery</span></div>
+      <div class="riga"><span class="k" data-it="Dove" data-en="Address">Dove</span><span class="v">Via Avigliana 47/A — 10138 Torino</span></div>
+      <div class="riga"><span class="k">P. IVA</span><span class="v">12971140012</span></div>
+      <div class="riga"><span class="k" data-it="Email" data-en="Email">Email</span><span class="v"><a href="tel:+390114337074">011 4337074</a></span></div>
+      <div class="riga"><span class="k" data-it="Telefono" data-en="Phone">Telefono</span><span class="v"><a href="tel:+390114337074">011 4337074</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Cosa succede quando visitate il sito" data-en="What happens when you visit">Cosa succede quando visitate il sito</h2>
+    <p data-it="Niente che vi riguardi personalmente. Non ci sono cookie, non c'è nessun sistema di statistiche, nessun pulsante dei social che vi segue, nessuna pubblicità. Il server che ospita queste pagine registra, come fa qualsiasi server del mondo, gli accessi tecnici — indirizzo IP, data e ora, pagina richiesta — per motivi di sicurezza e funzionamento. Sono registri automatici che non usiamo per identificare nessuno." data-en="Nothing that concerns you personally. There are no cookies, no analytics, no social buttons following you, no advertising. The server hosting these pages records technical access data — IP address, date and time, page requested — as any server in the world does, for security and operation. These are automatic logs we do not use to identify anyone.">Niente che vi riguardi personalmente. Non ci sono cookie, non c'è nessun sistema di statistiche, nessun pulsante dei social che vi segue, nessuna pubblicità. Il server che ospita queste pagine registra, come fa qualsiasi server del mondo, gli accessi tecnici — indirizzo IP, data e ora, pagina richiesta — per motivi di sicurezza e funzionamento. Sono registri automatici che non usiamo per identificare nessuno.</p>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Se ci scrivete per prenotare" data-en="If you write to book">Se ci scrivete per prenotare</h2>
+    <p data-it="Il modulo di prenotazione di questo sito <strong>non manda niente da solo</strong>: prepara il messaggio e apre il programma di posta del vostro telefono o computer. Siete voi a premere invia, e la mail arriva direttamente a noi. Il sito, nel mezzo, non conserva nulla." data-en="The booking form on this site <strong>sends nothing by itself</strong>: it writes the message and opens the mail app on your phone or computer. You press send, and the email reaches us directly. The website itself keeps nothing in between.">Il modulo di prenotazione di questo sito <strong>non manda niente da solo</strong>: prepara il messaggio e apre il programma di posta del vostro telefono o computer. Siete voi a premere invia, e la mail arriva direttamente a noi. Il sito, nel mezzo, non conserva nulla.</p>
+    <ul>
+      <li data-it="<strong>Cosa trattiamo:</strong> il vostro nome, il recapito da cui ci scrivete, il giorno, l'ora e il numero di persone." data-en="<strong>What we handle:</strong> your name, the address you write from, the day, the time and the number of people."><strong>Cosa trattiamo:</strong> il vostro nome, il recapito da cui ci scrivete, il giorno, l'ora e il numero di persone.</li>
+      <li data-it="<strong>Perché:</strong> per tenervi il tavolo e per rispondervi. È quello che serve per dare seguito alla vostra richiesta, e senza non potremmo farlo." data-en="<strong>Why:</strong> to hold your table and to reply. It is what is needed to act on your request, and without it we could not."><strong>Perché:</strong> per tenervi il tavolo e per rispondervi. È quello che serve per dare seguito alla vostra richiesta, e senza non potremmo farlo.</li>
+      <li data-it="<strong>Per quanto:</strong> il tempo necessario alla prenotazione e a un'eventuale risposta. Poi si cancella, salvo che una legge ci obblighi a tenerlo (per esempio per la contabilità, se avete mangiato da noi)." data-en="<strong>For how long:</strong> as long as the booking and any reply require. Then it is deleted, unless a law requires us to keep it (accounting records, for instance, if you dined with us)."><strong>Per quanto:</strong> il tempo necessario alla prenotazione e a un'eventuale risposta. Poi si cancella, salvo che una legge ci obblighi a tenerlo.</li>
+      <li data-it="<strong>A chi lo diciamo:</strong> a nessuno. Non vendiamo e non cediamo niente a terzi." data-en="<strong>Who we share it with:</strong> no one. We do not sell or pass anything to third parties."><strong>A chi lo diciamo:</strong> a nessuno. Non vendiamo e non cediamo niente a terzi.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Allergie e intolleranze" data-en="Allergies and intolerances">Allergie e intolleranze</h2>
+    <p data-it="Se ci segnalate un'allergia o un'intolleranza, ci state dando <strong>un'informazione sulla vostra salute</strong>, e la legge la protegge in modo particolare. La usiamo per una cosa sola: preparare il vostro piatto senza farvi stare male. Non la registriamo da nessuna parte oltre alla prenotazione, e la cancelliamo insieme a quella. Ce la date liberamente, e siete sempre voi a decidere se dircela." data-en="If you tell us about an allergy or an intolerance you are giving us <strong>information about your health</strong>, which the law protects with particular care. We use it for one thing only: to prepare your dish without harming you. We do not record it anywhere beyond the booking, and we delete it together with the booking. You give it to us freely, and it is always your choice whether to tell us.">Se ci segnalate un'allergia o un'intolleranza, ci state dando <strong>un'informazione sulla vostra salute</strong>, e la legge la protegge in modo particolare. La usiamo per una cosa sola: preparare il vostro piatto senza farvi stare male. Non la registriamo da nessuna parte oltre alla prenotazione, e la cancelliamo insieme a quella. Ce la date liberamente, e siete sempre voi a decidere se dircela.</p>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Cosa potete chiederci" data-en="What you can ask us">Cosa potete chiederci</h2>
+    <p data-it="In qualsiasi momento potete chiederci di:" data-en="At any time you can ask us to:">In qualsiasi momento potete chiederci di:</p>
+    <ul>
+      <li data-it="dirvi quali dati vostri abbiamo" data-en="tell you what data of yours we hold">dirvi quali dati vostri abbiamo</li>
+      <li data-it="correggerli, se sono sbagliati" data-en="correct them, if they are wrong">correggerli, se sono sbagliati</li>
+      <li data-it="cancellarli" data-en="delete them">cancellarli</li>
+      <li data-it="smettere di usarli, o limitarne l'uso" data-en="stop using them, or limit their use">smettere di usarli, o limitarne l'uso</li>
+      <li data-it="darveli in un file, se li volete portare altrove" data-en="give them to you in a file, if you want to take them elsewhere">darveli in un file, se li volete portare altrove</li>
+    </ul>
+    <p data-it="Basta chiamarci al <a href='tel:+390114337074'>011 4337074</a>. Vi rispondiamo entro un mese. Se pensate che abbiamo sbagliato qualcosa, potete anche rivolgervi al <a href='https://www.garanteprivacy.it' target='_blank' rel='noopener'>Garante per la protezione dei dati personali</a>." data-en="Just call us at <a href='tel:+390114337074'>011 4337074</a>. We reply within a month. If you believe we have got something wrong, you may also contact the <a href='https://www.garanteprivacy.it' target='_blank' rel='noopener'>Italian Data Protection Authority</a>.">Basta chiamarci al <a href="tel:+390114337074">011 4337074</a>. Vi rispondiamo entro un mese. Se pensate che abbiamo sbagliato qualcosa, potete anche rivolgervi al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="cont">
+    <h2 data-it="Se cambiamo qualcosa" data-en="If something changes">Se cambiamo qualcosa</h2>
+    <p data-it="Se un giorno il sito dovesse usare strumenti diversi, questa pagina verrà aggiornata e la data in alto lo dirà. Non ci sono versioni nascoste: quello che leggete qui è quello che facciamo." data-en="If one day the site were to use different tools, this page will be updated and the date at the top will say so. There are no hidden versions: what you read here is what we do.">Se un giorno il sito dovesse usare strumenti diversi, questa pagina verrà aggiornata e la data in alto lo dirà. Non ci sono versioni nascoste: quello che leggete qui è quello che facciamo.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="cont">
+    <p>Bakery · Via Avigliana 47/A — 10138 Torino · P. IVA 12971140012<br>
+    <a href="./" data-it="Torna al sito" data-en="Back to the site">Torna al sito</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var lang = "it";
+  function applica(){
+    document.querySelectorAll("[data-it]").forEach(function(el){
+      var v = el.getAttribute("data-" + lang);
+      if (v != null) el.innerHTML = v;
+    });
+    document.documentElement.setAttribute("lang", lang);
+  }
+  document.querySelectorAll(".lingua button").forEach(function(b){
+    b.addEventListener("click", function(){
+      lang = b.getAttribute("data-lang");
+      document.querySelectorAll(".lingua button").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+      applica();
+    });
+  });
+  applica();
+})();
+</script>
+</body>
+</html>
