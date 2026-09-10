@@ -20,5 +20,9 @@
  "piemontese": {
   "scade": "2026-09-12T08:12:25.884909+00:00",
   "venduto": false
+ },
+ "gamgam": {
+  "scade": "2026-09-12T08:54:28.416728+00:00",
+  "venduto": false
  }
 }
