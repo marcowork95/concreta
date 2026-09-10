@@ -16,5 +16,9 @@
  "camalli": {
   "scade": "2026-09-12T08:06:10.846808+00:00",
   "venduto": false
+ },
+ "piemontese": {
+  "scade": "2026-09-12T08:12:25.884909+00:00",
+  "venduto": false
  }
 }
