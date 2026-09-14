@@ -56,5 +56,9 @@
  "capri": {
   "scade": "2026-09-24T15:04:17.418286+00:00",
   "venduto": false
+ },
+ "dispensa": {
+  "scade": "2026-09-24T15:21:01.232482+00:00",
+  "venduto": false
  }
 }
