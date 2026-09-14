@@ -60,5 +60,9 @@
  "dispensa": {
   "scade": "2026-09-24T15:21:01.232482+00:00",
   "venduto": false
+ },
+ "ilcucco": {
+  "scade": "2026-09-24T15:32:09.860828+00:00",
+  "venduto": false
  }
 }
