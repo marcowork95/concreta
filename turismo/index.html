@@ -720,6 +720,13 @@ function stato(){
       return;
     }
     var ore = Math.floor(restano / 3600000), min = Math.floor((restano % 3600000) / 60000);
+    if (ore >= 48) {                       /* oltre le 48 ore si contano i giorni: «167 ore» non dice niente */
+      var gg = Math.round(restano / 86400000);
+      var en = (typeof lang !== "undefined" && lang === "en");
+      box.textContent = en ? "gone in " + gg + " days" : "sparisce fra " + gg + " giorni";
+      if (box3) box3.textContent = "\u2212" + gg + (en ? "d" : "g");
+      return;
+    }
     box.textContent = "sparisce fra " + (ore >= 1 ? ore + " ore " + min + " min" : min + " minuti");
     if (box3) box3.textContent = "\u2212" + (ore >= 1 ? ore + "h " + min + "m" : min + "m");
   }

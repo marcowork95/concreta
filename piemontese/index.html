@@ -560,7 +560,7 @@
   <div class="cont">
     <p class="occhio2">Questo sito &egrave; gi&agrave; pronto</p>
     <h2>Se vi piace, &egrave; vostro</h2>
-    <p class="intro">Non c&rsquo;&egrave; niente da progettare n&eacute; da aspettare: quello che state guardando &egrave; il sito della Trattoria Piemontese, finito. Ve lo consegniamo <strong>lo stesso giorno</strong>, con le istruzioni per agganciarlo al vostro indirizzo. Se non lo prendete, fra poche ore questa pagina si cancella da sola.</p>
+    <p class="intro">Non c&rsquo;&egrave; niente da progettare n&eacute; da aspettare: quello che state guardando &egrave; il sito della Trattoria Piemontese, finito. Ve lo consegniamo <strong>lo stesso giorno</strong>, con le istruzioni per agganciarlo al vostro indirizzo. Se non lo prendete, fra pochi giorni questa pagina si cancella da sola.</p>
 
     <ul class="incluso">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg><span>Il sito finito, pronto per il vostro indirizzo</span></li>
@@ -784,6 +784,13 @@ function stato(){
       return;
     }
     var ore = Math.floor(restano / 3600000), min = Math.floor((restano % 3600000) / 60000);
+    if (ore >= 48) {                       /* oltre le 48 ore si contano i giorni: «167 ore» non dice niente */
+      var gg = Math.round(restano / 86400000);
+      var en = (typeof lang !== "undefined" && lang === "en");
+      box.textContent = en ? "gone in " + gg + " days" : "sparisce fra " + gg + " giorni";
+      if (box3) box3.textContent = "\u2212" + gg + (en ? "d" : "g");
+      return;
+    }
     box.textContent = "sparisce fra " + (ore >= 1 ? ore + " ore " + min + " min" : min + " minuti");
     if (box3) box3.textContent = "\u2212" + (ore >= 1 ? ore + "h " + min + "m" : min + "m");
   }
