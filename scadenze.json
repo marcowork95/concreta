@@ -76,5 +76,9 @@
  "dagino": {
   "scade": "2026-09-24T16:20:36.798442+00:00",
   "venduto": false
+ },
+ "guglie": {
+  "scade": "2026-09-24T19:54:50.458908+00:00",
+  "venduto": false
  }
 }
