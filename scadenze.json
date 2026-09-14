@@ -72,5 +72,9 @@
  "aliciati": {
   "scade": "2026-09-24T16:05:01.455869+00:00",
   "venduto": false
+ },
+ "dagino": {
+  "scade": "2026-09-24T16:20:36.798442+00:00",
+  "venduto": false
  }
 }
