@@ -44,5 +44,9 @@
  "babette": {
   "scade": "2026-09-24T13:32:53.147471+00:00",
   "venduto": false
+ },
+ "tanaluppolo": {
+  "scade": "2026-09-24T14:35:24.846663+00:00",
+  "venduto": false
  }
 }
