@@ -64,5 +64,9 @@
  "ilcucco": {
   "scade": "2026-09-24T15:32:09.860828+00:00",
   "venduto": false
+ },
+ "nihao": {
+  "scade": "2026-09-24T15:43:26.779669+00:00",
+  "venduto": false
  }
 }
