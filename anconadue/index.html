@@ -61,7 +61,7 @@
   .scaduta h2{font-size:clamp(30px,7vw,48px);margin:0 0 18px}
   .scaduta p{color:var(--avorio2);font-size:18px}
 
-  .top{position:relative;z-index:50;background:rgba(20,16,14,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
+  .top{position:relative;z-index:50;background:rgba(21,17,14,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--filo)}
   .top .cont{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
   .marchio{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
   /* L'altezza del marchio la decide il cliente: un logotipo largo e basso (la Locanda:
@@ -80,10 +80,10 @@
   .apertura{position:relative;min-height:clamp(470px,78vh,680px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--filo)}
   .apertura .sfondo{position:absolute;inset:0;background-size:cover;background-position:center 40%;transform:scale(1.04)}
   .apertura .velo{position:absolute;inset:0;background:
-     radial-gradient(76% 60% at 26% 24%, rgba(201,139,69,.12), rgba(201,139,69,0) 62%),
-     linear-gradient(180deg, rgba(20,16,14,.62) 0%, rgba(20,16,14,.56) 26%, rgba(20,16,14,.88) 62%, rgba(20,16,14,.985) 100%)}
+     radial-gradient(76% 60% at 26% 24%, rgba(198,154,78,.12), rgba(198,154,78,0) 62%),
+     linear-gradient(180deg, rgba(21,17,14,0.62) 0%, rgba(21,17,14,0.56) 26%, rgba(21,17,14,0.88) 62%, rgba(21,17,14,.985) 100%)}
   .apertura .cont{position:relative;padding-top:52px;padding-bottom:clamp(32px,5vw,52px)}
-  .stato{display:inline-flex;align-items:center;gap:9px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;background:rgba(20,16,14,.80);border:1px solid var(--filo2);border-radius:99px;padding:7px 15px;margin-bottom:20px}
+  .stato{display:inline-flex;align-items:center;gap:9px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;background:rgba(21,17,14,.80);border:1px solid var(--filo2);border-radius:99px;padding:7px 15px;margin-bottom:20px}
   .pallino{width:8px;height:8px;border-radius:50%;background:var(--grigio);flex:none}
   .stato.aperto .pallino{background:var(--verde);box-shadow:0 0 0 4px rgba(140,175,135,.18)}
   .apertura h1{font-size:clamp(42px,9.4vw,92px);line-height:.98;letter-spacing:-.02em;margin:0 0 10px}
@@ -91,7 +91,7 @@
   .apertura .dida{font-size:clamp(16.5px,2vw,19px);color:var(--avorio2);max-width:35em;margin:0 0 26px}
   .azioni{display:flex;flex-wrap:wrap;gap:11px}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--et);font-size:17px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:3px;background:var(--ottone);color:var(--scuro);border:1px solid var(--ottone);cursor:pointer;white-space:nowrap}
-  .btn.vuoto{background:rgba(20,16,14,.62);color:var(--ottone)}
+  .btn.vuoto{background:rgba(21,17,14,.62);color:var(--ottone)}
   .btn svg{width:17px;height:17px;flex:none}
 
   .fascia{background:var(--notte2);border-bottom:1px solid var(--filo)}
@@ -125,8 +125,12 @@
 
   .scatto{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--filo);margin:0}
   .scatto img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-  .scatto figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio);background:linear-gradient(180deg,rgba(20,16,14,0),rgba(20,16,14,.93))}
+  .scatto figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio);background:linear-gradient(180deg,rgba(21,17,14,0),rgba(21,17,14,.93))}
   .galleria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+  /* il fascione: una foto sola, larga quanto la colonna, con la didascalia dentro */
+  .fascione{position:relative;margin:0 0 26px;border:1px solid var(--filo);border-radius:3px;overflow:hidden}
+  .fascione img{width:100%;height:auto;aspect-ratio:11/7;object-fit:cover}
+  .fascione figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 13px;font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio);background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.85))}
   .larga img{aspect-ratio:43/28}
   .alta img{aspect-ratio:4/5}
 
@@ -177,7 +181,7 @@
   .dintorni li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:10px 0;border-top:1px solid var(--filo);font-size:16.5px;color:var(--avorio2)}
   .dintorni li .km{font-family:var(--et);font-size:14px;font-weight:600;letter-spacing:.08em;color:var(--ottone);white-space:nowrap}
   .aic{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;
-       border-left:3px solid var(--ottone2);background:rgba(201,139,69,.08);padding:20px 22px;margin:22px 0;border-radius:0 3px 3px 0}
+       border-left:3px solid var(--ottone2);background:rgba(198,154,78,.08);padding:20px 22px;margin:22px 0;border-radius:0 3px 3px 0}
   .aic svg{width:32px;height:32px;color:var(--ottone);flex:none}
   .aic p{margin:0;font-size:16.5px;color:var(--avorio)}
   .aic b{color:var(--ottone);font-weight:600}
@@ -225,6 +229,7 @@
   }
   @media (max-width:640px){
     body{font-size:16.5px;padding-bottom:64px}
+    .fascione img{aspect-ratio:16/10}
     .cont{padding:0 18px}
     .apertura{min-height:auto}
     .apertura .cont{padding-top:38px;padding-bottom:32px}
