@@ -68,5 +68,9 @@
  "nihao": {
   "scade": "2026-09-24T15:43:26.779669+00:00",
   "venduto": false
+ },
+ "aliciati": {
+  "scade": "2026-09-24T16:05:01.455869+00:00",
+  "venduto": false
  }
 }
