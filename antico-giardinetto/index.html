@@ -71,7 +71,7 @@
   .nav a{font-family:var(--et);font-size:15px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--avorio2);text-decoration:none;white-space:nowrap}
   .nav a:hover{color:var(--ottone)}
   .lingua{display:flex;border:1px solid var(--filo2);border-radius:3px;overflow:hidden;flex:none}
-  .lingua button{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.1em;padding:5px 10px;background:transparent;color:var(--grigio);border:0;cursor:pointer}
+  .lingua button{font-family:var(--et);font-size:13px;font-weight:600;letter-spacing:.1em;padding:12px 13px;min-height:42px;background:transparent;color:var(--grigio);border:0;cursor:pointer}
   .lingua button[aria-pressed="true"]{background:var(--ottone);color:#241A08}
 
   .apertura{position:relative;min-height:clamp(460px,72vh,640px);display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--filo)}
@@ -272,6 +272,11 @@
   @media (prefers-reduced-motion:no-preference){
     .fiamma{animation:resp 5s ease-in-out infinite}
     @keyframes resp{0%,100%{opacity:.8}50%{opacity:1}}
+  }
+
+  @media (max-width:380px){
+    .chiamata{padding:22px 12px 18px}
+    .chiamata .num{font-size:clamp(25px,7.4vw,42px);letter-spacing:0}
   }
 
   .compra{background:var(--ottone);color:#1E1206;padding:clamp(44px,7vw,72px) 0}
